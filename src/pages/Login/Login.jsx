@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from '../../Component/Login/Loginpage'
 
-export default function Login() {
+export default function Loginpage() {
   return (
     <>
     <Login/>
