@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import "./Styles/Blog.css";
-import checkpopup from "./assets/BlogPopUp.svg";
+import checkpopup from "./assets/mini_image.png";
 /*feat : 새로운 기능 추가
 fix : 버그 수정
 docs : 문서 수정
@@ -96,8 +96,8 @@ function Blog() {
           onRequestClose={() => setIsOpen(false)}
           id="check-modal"
         >
-          <button onClick={() => setIsOpen(false)}>확인</button>
-          <img src={checkpopup} alt="비로그인 팝업" width="80%" height="80%" />
+          <button onClick={() => setIsOpen(false)}>확인했어요</button>
+          <img src={checkpopup} alt="비로그인 팝업" />
         </Modal>
       </div>
       <div className="pages">
