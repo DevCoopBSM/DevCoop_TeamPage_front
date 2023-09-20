@@ -127,19 +127,3 @@
   font-size: 20px;
   cursor: pointer;
 }
-#check-modal {
-  width: 780px;
-  height: 315px;
-  border: 23px solid black;
-}
-#check-modal img {
-  position: relative; /* 이미지를 모달 내에서 상대적으로 위치시킵니다. */
-
-  width: 100% !important;
-  height: 153.5px;
-  top: 50%; /* 50% 아래로 이동시킵니다. */
-  transform: translateY(-5%); /* 이미지의 중앙을 모달 중앙에 위치시킵니다. */
-}
-#check-modal.ReactModal___ Content.ReactModal_Content-- {
-  width: 780px;
-}

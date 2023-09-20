@@ -55,3 +55,29 @@
   letter-spacing: 0em;
   text-align: left;
 }
+#edit {
+  color: rgba(138, 138, 138, 1);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 56px;
+  height: 36px;
+  top: 178px;
+  left: 1203px;
+}
+#remove {
+  color: rgba(138, 138, 138, 1);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 56px;
+  height: 36px;
+  top: 178px;
+  left: 1303px;
+}
