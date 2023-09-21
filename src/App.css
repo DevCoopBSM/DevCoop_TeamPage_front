@@ -34,3 +34,10 @@
       font-size:20px;
       text-shadow: 2px 2px 2px gray ;
     }
+    #chicken{
+      width: 100px;
+      height: 100px;
+    }
+    a:link { color:#FFE766; }
+    a:visited { color:#FFE766; }
+    a{text-decoration-line: none;}

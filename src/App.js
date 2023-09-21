@@ -1,16 +1,16 @@
-
-import './App.css';
+import Login from "./Login";
+import Sign from "./Sign";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (
-    <div className="login-wrapper">
-      <h2>Dev Coop</h2>
-      <form method="post" action="실제_서버_URL" id="login-form">
-        <input type="text" name="userName" placeholder="이메일" /><br />
-        <input type="password" name="userPassword" placeholder="비밀번호" /><br /><br />
-        <input type="submit" id="login" value="로그인" />
-      </form>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Sign" element={<Sign/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
