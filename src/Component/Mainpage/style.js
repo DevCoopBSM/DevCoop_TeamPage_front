@@ -21,7 +21,7 @@ export const LogoImage = styled.img`
   width: 64.344px;
   height: 73.292px;
   flex-shrink: 0;
-  background: #fff
+  background: #fff;
 `;
 
 export const LogoText = styled.span`
@@ -46,7 +46,7 @@ export const Button = styled.button`
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  margin-left: 10px;
+  margin-left: 20px;
   background: none;
   border: none;
   cursor: pointer;
@@ -63,16 +63,16 @@ export const LoginButton = styled.button`
   border-radius: 20px;
   background: #FFF;
   box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.25);
+  border: none;
 `;
 
-export const LoginText = styled.text`
+export const LoginText = styled.span`
   color: #000;
   font-family: Inter;
   font-size: 23px;
   font-style: normal;
   font-weight: 300;
-  line-height: normal;
+  text-decoration: none;
 `;
 
-// main.jsx
-// Navbar 컴포넌트 코드는 그대로 사용합니다.
+// navbar ended

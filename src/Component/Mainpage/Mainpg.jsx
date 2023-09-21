@@ -1,28 +1,16 @@
-// main.jsx
+import Navbar from "../navbar";
 import React from 'react';
-import * as M from "./style";
-import { Link } from 'react-router-dom';
+import Home from "../imgslider/imgslider"
+import Team from "../Team/Teampg"
 
 const Mainpg = () => {
   return (
     <body>
-      <M.NavbarContainer>
-        <M.LogoContainer>
-          <M.LogoImage src="logo.png" alt="Logo" />
-          <M.LogoText>DEVCOOP</M.LogoText>
-        </M.LogoContainer>
-        <M.ButtonContainer>
-          <Link to="/team"><M.Button>Team</M.Button></Link>
-          <Link to="/project"><M.Button>Project</M.Button></Link>
-          <Link to="/member"><M.Button>Member</M.Button></Link>
-          <Link to="/blog"><M.Button>Blog</M.Button></Link>
-          <Link to="/login">
-            <M.LoginButton>
-              <M.LoginText>Log in</M.LoginText>
-            </M.LoginButton>
-          </Link>
-        </M.ButtonContainer>
-      </M.NavbarContainer>
+    <div>
+      <Navbar />
+      <Home />
+      <Team />
+    </div>
     </body>
   );
 };
