@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import "./Styles/Blog.css";
 import checkpopup from "./assets/mini_image.png";
+import Pagination from "react-js-pagination";
 /*feat : 새로운 기능 추가
 fix : 버그 수정
 docs : 문서 수정
@@ -83,6 +84,21 @@ function Blog() {
   function Board(index) {
     window.location.href = "/ReadBoard";
   }
+  const Paging = ({ page, count, setPage }) => {
+    return (
+      <div>
+        <Pagination
+          activePage={page}
+          itemsCountPerPage={5}
+          totalItemsCount={count}
+          pageRangeDisplayed={5}
+          prevPageText={"<"}
+          nextPageText={">"}
+          onChange={setPage}
+        />
+      </div>
+    );
+  };
 
   return (
     <div id="all">
