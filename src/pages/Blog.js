@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import "../Styles/Blog.css";
+import checkpopup from "../assets/mini_image.png";
 import Modal from "react-modal";
-import "./Styles/Blog.css";
-import checkpopup from "./assets/mini_image.png";
 import Pagination from "react-js-pagination";
 /*feat : 새로운 기능 추가
 fix : 버그 수정
@@ -76,10 +76,10 @@ const pagesData = [
 
 function Blog() {
   const [manager, setManager] = useState(false);
-  const [IsOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   function write(e) {
     if (manager) window.location.href = "/CreateBoard";
-    else setIsOpen(true);
+    else setIsModalOpen(true);
   }
   function Board(index) {
     window.location.href = "/ReadBoard";
@@ -100,6 +100,8 @@ function Blog() {
     );
   };
 
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   return (
     <div id="all">
       <div className="header">
@@ -107,13 +109,14 @@ function Blog() {
         <button id="to-write" onClick={write}>
           글 쓰러 가기
         </button>
-        <Modal
-          isOpen={IsOpen}
-          onRequestClose={() => setIsOpen(false)}
-          id="check-modal"
-        >
-          <button onClick={() => setIsOpen(false)}>확인했어요</button>
-          <img src={checkpopup} alt="비로그인 팝업" />
+      </div>
+      <div>
+        <Modal isOpen={isModalOpen} closeModal={closeModal}>
+          <h2>hi</h2>
+          <p>it's me</p>
+          <button id="check" onClick={setIsModalOpen(false)}>
+            학인햇어요
+          </button>
         </Modal>
       </div>
       <div className="pages">

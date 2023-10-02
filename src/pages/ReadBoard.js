@@ -1,5 +1,5 @@
 import React from "react";
-import "./Styles/ReadBoard.css";
+import "../Styles/ReadBoard.css";
 
 function ReadBoard() {
   return (

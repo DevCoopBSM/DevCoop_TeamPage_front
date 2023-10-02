@@ -1,8 +1,9 @@
-import Blog from "./Blog";
-import ReadBoard from "./ReadBoard";
-import CreateBoard from "./CreateBoard";
+import Blog from "./pages/Blog";
+import ReadBoard from "./pages/ReadBoard";
+import CreateBoard from "./pages/CreateBoard";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./Styles/App.css";
+import Modal from "./pages/modal";
 
 function App() {
   return (
