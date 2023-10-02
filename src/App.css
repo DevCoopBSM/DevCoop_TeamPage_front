@@ -41,5 +41,28 @@
     a:link { color:#FFE766; }
     a:visited { color:#FFE766; }
     a{text-decoration-line: none;}
+    #pro1{
+      width:600px;
+      height:600px;
+    }
+    .pro1-image{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .pro1-text{
+      position:absolute;
+      top:400px;
+      z-index: 2;
+      color:white;
+      text-align: center;
+      background-color: #00000073;
+      width: 100%;
+      height:200px;
+      
+    }
+    
+
 
 
