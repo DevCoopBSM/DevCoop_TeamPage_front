@@ -1,0 +1,199 @@
+.title {
+  position: absolute;
+  width: 400px;
+  height: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: left;
+  top: 160px;
+  left: 200px;
+}
+#to-write {
+  position: absolute;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  top: 160px;
+  left: 1110px;
+  line-height: 45px;
+  width: 225px;
+  height: 45px;
+  font-weight: 800;
+  font-size: 17.5px;
+  background-color: rgba(255, 194, 12, 1);
+  color: white;
+  size: 90px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+#to-write:hover {
+  background-color: rgb(214, 167, 26);
+}
+
+.page-box {
+  position: absolute;
+  top: 240px;
+  left: 200px;
+  width: 1140px;
+  height: 110px;
+  background: #ffffff;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.mini-title {
+  position: absolute;
+  width: 458px;
+  height: 44px;
+  left: 54px;
+  top: 51px;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 44px;
+  align-items: center;
+  color: #000000;
+}
+
+.date {
+  position: absolute;
+  width: 109px;
+  height: 22px;
+  left: 54px;
+  top: 25px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  align-items: center;
+  color: #565656;
+}
+
+.writer {
+  position: absolute;
+  width: 205px;
+  height: 22px;
+  left: 455px;
+  top: 67px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  align-items: center;
+  text-align: left;
+  color: #565656;
+}
+
+#first-button {
+  background: rgba(255, 214, 0, 1);
+  width: 48px;
+  height: 48px;
+  top: 670.5px;
+  left: 723.5px;
+  padding: 10px;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#second-button {
+  background: rgba(255, 239, 153, 1);
+
+  width: 48px;
+  height: 48px;
+  top: 670.5px;
+  left: 778px;
+  padding: 10px;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#third-button {
+  background: rgba(255, 239, 153, 1);
+
+  width: 48px;
+  height: 48px;
+  top: 670.5px;
+  left: 834.5px;
+  padding: 10px;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+#manage_pop {
+  z-index: 1200;
+  position: relative; /* 이미지를 모달 내에서 상대적으로 위치시킵니다. */
+  top: 50%; /* 50% 아래로 이동시킵니다. */
+  transform: translateY(-50%); /* 이미지의 중앙을 모달 중앙에 위치시킵니다. */
+}
+#check-modal {
+  width: 780px;
+}
+
+#check-modal img {
+  padding: 0px;
+  position: relative;
+  width: 100% !important;
+  height: 153.5px;
+  top: 50%;
+  transform: translateY(-5%);
+}
+
+#modal {
+  display: flex !important;
+  width: 780px;
+  height: 315px;
+  padding: 0px !important;
+  border-radius: 32px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+#popup {
+  position: absolute;
+  top: 160px;
+}
+#popup_okay {
+  position: absolute;
+  width: 600px;
+  height: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 50px;
+  text-align: left;
+  top: 70px;
+  left: 90px;
+  font-style: bold;
+}
+#check {
+  position: absolute;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  top: 160px;
+  left: 90px;
+  line-height: 45px;
+  width: 275px;
+  height: 50px;
+  font-weight: 800;
+  font-size: 20.5px;
+  background-color: rgba(255, 194, 12, 1);
+  color: white;
+  size: 90px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  z-index: 1201;
+}
+
+#check:hover {
+  background-color: rgb(214, 167, 26);
+}

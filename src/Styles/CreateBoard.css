@@ -1,0 +1,81 @@
+* {
+  font: Inter;
+}
+#main-title {
+  width: 569px;
+  height: 60px;
+  top: 150px;
+  left: 180px;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 61px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+#title {
+  position: absolute;
+  border: none;
+  outline: none;
+  width: 1000px;
+  height: 30px;
+  top: 240px;
+  left: 180px;
+  padding: 30px 60px 30px 60px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+#content {
+  position: absolute;
+  border: none;
+  outline: none;
+  width: 1000px;
+  height: 300px;
+  top: 518px;
+  left: 180px;
+  font-size: 20px;
+  padding: 30px 60px 30px 60px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
+}
+#explain {
+  position: absolute;
+  border: none;
+  outline: none;
+  width: 1000px;
+  height: 60px;
+  top: 360px;
+  left: 180px;
+  padding: 30px 60px 30px 60px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+#title::placeholder {
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+#explain::placeholder {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#result {
+  cursor: pointer;
+  position: absolute;
+  border: none;
+  width: 320px;
+  height: 54px;
+  top: 960px;
+  left: 596px;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  background: rgba(255, 194, 12, 1);
+  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
+}
