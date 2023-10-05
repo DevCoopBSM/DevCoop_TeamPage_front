@@ -13,7 +13,7 @@ test : 테스트 코드, 리펙토링 테스트 코드 추가
 chore : 빌드 업무 수정, 패키지 매니저 수정*/
 
 function Blog() {
-  const [manager, setManager] = useState(false);
+  const [manager, setManager] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setData] = useState([]);
   function write(e) {

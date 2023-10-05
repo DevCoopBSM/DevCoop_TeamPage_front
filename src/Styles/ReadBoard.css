@@ -53,6 +53,9 @@
   height: 36px;
   top: 178px;
   left: 1203px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
 }
 #remove {
   position: absolute;
