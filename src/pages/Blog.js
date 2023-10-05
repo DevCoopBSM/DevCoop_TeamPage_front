@@ -37,7 +37,7 @@ function Blog() {
         }
       })
       .catch((error) => {
-        // 실패
+        // 실패시
         console.log("실패", error);
       });
   }, []);
