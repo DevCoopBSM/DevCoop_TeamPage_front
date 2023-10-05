@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/Blog.css";
 import checkpopup from "../assets/mini_image.png";
 import Modal from "react-modal";
 import Pagination from "react-js-pagination";
+import axios from "axios";
 /*feat : 새로운 기능 추가
 fix : 버그 수정
 docs : 문서 수정
@@ -10,73 +11,11 @@ style : 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
 refactor : 코드 리펙토링
 test : 테스트 코드, 리펙토링 테스트 코드 추가
 chore : 빌드 업무 수정, 패키지 매니저 수정*/
-const pagesData = [
-  {
-    title: "뭔지는 모르겠지만 깔쌈한 제목",
-    writer: "작성자: 박현준",
-    date: "20XX. 0X. XX",
-  },
-  {
-    title: "다른 제목",
-    writer: "작성자: 다른 작성자",
-    date: "20XX. 0X. XX",
-  },
-  {
-    title: "또 다른 제목",
-    writer: "작성자: 또 다른 작성자",
-    date: "20YY. YY. YY",
-  },
-  {
-    title: "또 다른 제목",
-    writer: "작성자: 또 다른 작성자",
-    date: "20YY. YY. YY",
-  },
-  {
-    title: "또 다른 제목",
-    writer: "작성자: 또 다른 작성자",
-    date: "20YY. YY. YY",
-  },
-  {
-    title: "또 다른 제목",
-    writer: "작성자: 또 다른 작성자",
-    date: "20YY. YY. YY",
-  },
-  {
-    title: "또 다른 제목",
-    writer: "작성자: 또 다른 작성자",
-    date: "20YY. YY. YY",
-  },
-  {
-    title: "또 다른 제목",
-    writer: "작성자: 또 다른 작성자",
-    date: "20YY. YY. YY",
-  },
-  {
-    title: "또 다른 제목",
-    writer: "작성자: 또 다른 작성자",
-    date: "20YY. YY. YY",
-  },
-  {
-    title: "또 다른 제목",
-    writer: "작성자: 또 다른 작성자",
-    date: "20YY. YY. YY",
-  },
-  {
-    title: "또 다른 제목",
-    writer: "작성자: 또 다른 작성자",
-    date: "20YY. YY. YY",
-  },
-  {
-    title: "또 다른 제목",
-    writer: "작성자: 또 다른 작성자",
-    date: "20YY. YY. YY",
-  },
-  //데이터삽입 db 추가
-];
 
 function Blog() {
   const [manager, setManager] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [data, setData] = useState([]);
   function write(e) {
     if (manager) window.location.href = "/CreateBoard";
     else setIsModalOpen(true);
@@ -84,6 +23,25 @@ function Blog() {
   function Board(index) {
     window.location.href = "/ReadBoard";
   }
+
+  useEffect(() => {
+    axios
+      .get("http://192.168.10.1:5000/api/showboard")
+      .then((response) => {
+        // 성공했을 때 로직
+        console.log("성공");
+        if (Array.isArray(response.data)) {
+          setData(response.data);
+        } else {
+          console.error("Data is not an array");
+        }
+      })
+      .catch((error) => {
+        // 실패
+        console.log("실패", error);
+      });
+  }, []);
+
   const Paging = ({ page, count, setPage }) => {
     return (
       <div>
@@ -111,16 +69,17 @@ function Blog() {
         </button>
       </div>
       <div>
-        <Modal isOpen={isModalOpen} closeModal={closeModal}>
-          <h2>hi</h2>
-          <p>it's me</p>
-          <button id="check" onClick={setIsModalOpen(false)}>
-            학인햇어요
+        <Modal isOpen={isModalOpen} closeModal={closeModal} id="modal">
+          <div style={{ flex: 1, backgroundColor: "rgba(0, 0, 0, 0.7)" }}></div>
+          <span id="popup_okay">관리자 권한을 확인해주세요</span>
+          <button id="check" onClick={() => setIsModalOpen(false)}>
+            확인했어요
           </button>
+          <img src={checkpopup} alt="popup" id="popup" />
         </Modal>
       </div>
       <div className="pages">
-        {pagesData.map((page, index) => {
+        {data.map((page, index) => {
           if (index < 11) {
             //11넘으면안보이게
             return (
