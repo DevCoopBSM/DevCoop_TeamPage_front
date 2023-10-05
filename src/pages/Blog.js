@@ -13,7 +13,7 @@ test : 테스트 코드, 리펙토링 테스트 코드 추가
 chore : 빌드 업무 수정, 패키지 매니저 수정*/
 
 function Blog() {
-  const [manager, setManager] = useState(false);
+  const [manager, setManager] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setData] = useState([]);
   function write(e) {
@@ -37,7 +37,7 @@ function Blog() {
         }
       })
       .catch((error) => {
-        // 실패
+        // 실패시
         console.log("실패", error);
       });
   }, []);
@@ -69,8 +69,16 @@ function Blog() {
         </button>
       </div>
       <div>
-        <Modal isOpen={isModalOpen} closeModal={closeModal} id="modal">
-          <div style={{ flex: 1, backgroundColor: "rgba(0, 0, 0, 0.7)" }}></div>
+        <Modal
+          isOpen={isModalOpen}
+          closeModal={closeModal}
+          id="modal"
+          style={{
+            overlay: {
+              backgroundColor: "rgba(0, 0, 0, 0.40)",
+            },
+          }}
+        >
           <span id="popup_okay">관리자 권한을 확인해주세요</span>
           <button id="check" onClick={() => setIsModalOpen(false)}>
             확인했어요
