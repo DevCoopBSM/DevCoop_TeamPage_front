@@ -2,7 +2,6 @@ import React from "react";
 import "../Styles/CreateBoard.css";
 
 function CreateBoard() {
-  //박스들 세로, 가로 크기 좀 줄이기로
   return (
     <>
       <div id="main-title">데브쿠프 공지사항 - 글쓰기</div>
