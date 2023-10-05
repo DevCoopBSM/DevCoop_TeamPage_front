@@ -75,7 +75,7 @@ function Blog() {
           id="modal"
           style={{
             overlay: {
-              backgroundColor: "rgba(0, 0, 0, 0.75)",
+              backgroundColor: "rgba(0, 0, 0, 0.40)",
             },
           }}
         >
