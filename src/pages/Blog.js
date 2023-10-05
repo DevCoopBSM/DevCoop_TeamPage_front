@@ -69,8 +69,16 @@ function Blog() {
         </button>
       </div>
       <div>
-        <Modal isOpen={isModalOpen} closeModal={closeModal} id="modal">
-          <div style={{ flex: 1, backgroundColor: "rgba(0, 0, 0, 0.7)" }}></div>
+        <Modal
+          isOpen={isModalOpen}
+          closeModal={closeModal}
+          id="modal"
+          style={{
+            overlay: {
+              backgroundColor: "rgba(0, 0, 0, 0.75)",
+            },
+          }}
+        >
           <span id="popup_okay">관리자 권한을 확인해주세요</span>
           <button id="check" onClick={() => setIsModalOpen(false)}>
             확인했어요
