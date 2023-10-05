@@ -1,6 +1,5 @@
 * {
   font: Inter;
-  position: absolute;
 }
 
 #mini-title {
@@ -56,6 +55,7 @@
   text-align: left;
 }
 #edit {
+  position: absolute;
   color: rgba(138, 138, 138, 1);
   font-family: Inter;
   font-size: 16px;
@@ -69,6 +69,7 @@
   left: 1203px;
 }
 #remove {
+  position: absolute;
   color: rgba(138, 138, 138, 1);
   font-family: Inter;
   font-size: 16px;
