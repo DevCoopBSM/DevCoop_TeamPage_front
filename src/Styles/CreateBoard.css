@@ -2,6 +2,7 @@
   font: Inter;
 }
 #main-title {
+  position: absolute;
   width: 569px;
   height: 60px;
   top: 150px;
