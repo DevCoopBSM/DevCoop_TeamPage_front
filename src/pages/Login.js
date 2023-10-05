@@ -1,6 +1,6 @@
 import "../Styles/Login.css";
-import chick from "./DevCoopL.svg";
-import Sign from "./Sign";
+import chick from "../assets/DevCoopL.svg";
+import Sign from "../pages/Sign.js";
 import { Link } from "react-router-dom";
 
 function Login() {

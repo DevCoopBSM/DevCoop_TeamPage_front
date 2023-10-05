@@ -5,8 +5,8 @@ import Paging from "./pages/Paging";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Modal from "./pages/modal";
-import Login from "./Login";
-import Sign from "./Sign";
+import Login from "./pages/Login";
+import Sign from "./pages/Sign";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path="/CreateBoard" element={<CreateBoard />} />
         <Route path="/Paging" element={<Paging />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/Sign" element={<Sign/>} />
+        <Route path="/Sign" element={<Sign />} />
       </Routes>
     </BrowserRouter>
   );

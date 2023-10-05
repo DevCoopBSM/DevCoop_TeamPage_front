@@ -1,5 +1,5 @@
 import "../Styles/Sign.css";
-import chick from "./DevCoopL.svg";
+import chick from "../assets/DevCoopL.svg";
 import { Link } from "react-router-dom";
 
 function Sign() {
