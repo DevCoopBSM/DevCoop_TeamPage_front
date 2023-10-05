@@ -49,19 +49,21 @@ function Project() {
       </div>
 
 
-
-      <div class="ar2"><img id="ariii" src={ari} alt="ari image"></img></div>
-    <div class="headline-text2">
-      <p>
-        <p class="head3">소중한 상품권,
-        <p class="head3">
-          이젠 알이에게 맡겨주세요.
-        </p>
-        </p>
-        <p id="head1">아리페이</p>
-      </p>
-      <button id="probtn">>프로젝트보러가기</button>
-    </div>
+      <div class="foot-wrapeer">
+        <div class="ar2"><img id="ariii" src={ari} alt="ari image"></img></div>
+        <div class="headline-text2">
+          <p>
+            <p class="head3">소중한 상품권,
+            <p class="head3">
+              이젠 알이에게 맡겨주세요.
+            </p>
+            </p>
+            <p id="head1">아리페이</p>
+          </p>
+          <button id="probtn">>프로젝트보러가기</button>
+        </div>
+      </div>
+      
       
   </div>
   );
