@@ -9,13 +9,6 @@ function CreateBoard() {
       <div className="title-box">
         <input type="text" id="title" placeholder="제목을 입력해주세요"></input>
       </div>
-      <div className="explain-box">
-        <input
-          type="text"
-          id="explain"
-          placeholder="설명을 입력해주세요"
-        ></input>
-      </div>
       <div className="content-box">
         <input
           type="text"
