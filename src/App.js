@@ -20,11 +20,10 @@ function App() {
         <Route path="/Paging" element={<Paging />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Sign" element={<Sign />} />
+        <Routers />
       </Routes>
     </BrowserRouter>
-    <BrowserRouter>
-      <Routers />
-    </BrowserRouter>
+
   );
 }
 
