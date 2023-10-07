@@ -18,6 +18,7 @@ const ImageSlider = () => {
     };
   }, []);
 
+
   return (
     <div>
     <S.ImageSliderContainer>
@@ -27,7 +28,7 @@ const ImageSlider = () => {
         alt="DEVCOOP"
         className="slider-image"
       />
-      <S.DevCoopText>DEVCOOP<p></p>(디씨인사이드아님)</S.DevCoopText>
+      <S.DevCoopText>DevCoop, but not D.C.</S.DevCoopText>
     </S.ImageSliderContainer>
     </div>
   );

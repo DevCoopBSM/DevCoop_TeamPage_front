@@ -10,7 +10,7 @@ const Mainpg = () => {
       <M.NavbarContainer>
         <M.LogoContainer>
           <M.LogoImage src="logo.png" alt="Logo" />
-          <M.LogoText>DEVCOOP</M.LogoText>
+          <M.LogoText>DevCoop</M.LogoText>
         </M.LogoContainer>
         <M.ButtonContainer>
           <Link to="/team"><M.Button>Team</M.Button></Link>

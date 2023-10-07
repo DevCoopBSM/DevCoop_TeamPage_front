@@ -1,15 +1,19 @@
-// style.js
+// navbar 스타일입니다.
 import styled from "styled-components";
 
 export const NavbarContainer = styled.div`
   width: 98%;
-  height: 100px;
+  height: 80px;
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 `;
 
 export const LogoContainer = styled.div`
@@ -18,20 +22,26 @@ export const LogoContainer = styled.div`
 `;
 
 export const LogoImage = styled.img`
-  width: 64.344px;
-  height: 73.292px;
+  width: 48px;
+  height: 55px;
   flex-shrink: 0;
   background: #fff;
+
+  position: fixed;
+  left: 65px
 `;
 
 export const LogoText = styled.span`
   color: #000;
   font-family: Inter;
-  font-size: 30px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
-  margin-left: 10px;
+  margin-left: 5px;
+
+  position: fixed;
+  left: 120px
 `;
 
 export const ButtonContainer = styled.div`
@@ -42,11 +52,11 @@ export const ButtonContainer = styled.div`
 export const Button = styled.button`
   color: #000;
   font-family: Inter;
-  font-size: 23px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  margin-left: 20px;
+  margin-right: 80px;
   background: none;
   border: none;
   cursor: pointer;
@@ -55,7 +65,7 @@ export const Button = styled.button`
 
 export const LoginButton = styled.button`
   display: flex;
-  width: 137.322px;
+  width: 120px;
   padding: 12px 33px;
   justify-content: center;
   align-items: center;
@@ -64,12 +74,13 @@ export const LoginButton = styled.button`
   background: #FFF;
   box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.25);
   border: none;
+  margin-right: 80px;
 `;
 
 export const LoginText = styled.span`
   color: #000;
   font-family: Inter;
-  font-size: 23px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 300;
   text-decoration: none;
