@@ -1,13 +1,14 @@
-<<<<<<< HEAD
+
 @font-face {
     font-family: 'Inter';
-    src: url('/Inter.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('./Inter.ttf') format('truetype');
   }
-  
-=======
 
+/* Sign, Login.css 그리고 App.css 가 메인 페이지의 오브젝트들을 밀리게 하는 현상이 확인되어 주석처리 합니다.
+$$$ 해결 방법 및 기존 스타일 적용 >> 스타일드 컴포넌트를 사용해서 해결 또는 다른 스타일 이름을 사용해서 해결
+질문은 Middle1204 <<
+*/
+/*
     .login-wrapper{
       display: flex;
       outline: auto;
@@ -27,13 +28,12 @@
       box-shadow: 2px 2px gray;
       border-color: white
     }
-    body{
+      body{
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 13% 0 0 0 ;
-
-    }
+    } 
     h2{
       text-align: center;
     }
@@ -50,6 +50,5 @@
     a:link { color:#FFE766; }
     a:visited { color:#FFE766; }
     a{text-decoration-line: none;}
-
-
->>>>>>> 5daf8e6b48be746538e53f7e490cfe5320bbe010
+    
+*/

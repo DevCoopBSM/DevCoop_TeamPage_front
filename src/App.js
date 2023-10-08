@@ -2,12 +2,13 @@ import Blog from "./pages/Blog";
 import ReadBoard from "./pages/ReadBoard";
 import CreateBoard from "./pages/CreateBoard";
 import Paging from "./pages/Paging";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Modal from "./pages/modal";
 import Login from "./pages/Login";
 import Sign from "./pages/Sign";
-import { BrowserRouter } from "react-router-dom";
+
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+
 import Routers from "./Component/router";
 
 function App() {
@@ -20,8 +21,9 @@ function App() {
         <Route path="/Paging" element={<Paging />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Sign" element={<Sign />} />
+        </Routes>
         <Routers />
-      </Routes>
+      
     </BrowserRouter>
 
   );
