@@ -15,13 +15,18 @@ function CreateBoard() {
 
   // DB로 값 전송 함수
   const sendDataToDB = () => {
-    // POST 요청을 통해 title과 content를 DB로 전송. 여기서는 예시 URL을 사용하였습니다.
     axios
-      .post("/api/create", { title: title, content: content })
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
-
-    setIsModalOpen(false); // 모달 닫기
+      .post("http://10.10.0.15:5000/api/showboard", {
+        title: title,
+        content: content,
+      })
+      .then((response) => {
+        console.log("성공");
+        closeModal();
+      })
+      .catch((error) => {
+        console.log("실패", error);
+      });
   };
 
   return (
@@ -45,6 +50,8 @@ function CreateBoard() {
           onChange={(e) => setContent(e.target.value)}
         ></input>
       </div>
+
+      {/* 모달 창이 열리게 변경 */}
       <button type="button" id="result" onClick={() => setIsModalOpen(true)}>
         등록하기
       </button>
@@ -53,8 +60,7 @@ function CreateBoard() {
 
       <Modal
         isOpen={isModalOpen}
-        closeModal={closeModal}
-        id="modal"
+        onRequestClose={closeModal}
         style={{ overlay: { backgroundColor: "rgba(0,0,0,0.40)" } }}
       >
         <span id="popup_okay">공지글로 등록 하시겠어요?</span>
