@@ -1,10 +1,8 @@
 import React from "react";
 import * as S from "./style";
 import chick from "../../assets/DevCoopL.svg";
-import Sign from "../Sign/Signpage.jsx";
 
-
-function Login() {
+function Sign() {
   return (
     <S.Body>
     <S.LoginWrapper>
@@ -15,15 +13,22 @@ function Login() {
         <br />
         <S.Input type="password" name="userPassword" placeholder="비밀번호" />
         <br />
+        <S.Input
+          type="password check"
+          name="userPasswordcheck"
+          placeholder="비밀번호 확인"
+        />
         <br />
-        <S.LoginButton type="submit" id="login" value="로그인" />
+        <br />
+        <S.LoginButton type="submit" id="login" value="회원가입" />
+        <br></br>
       </form>
-      <text>
-        만약 계정이 없다면?<S.StyledLink to="/Sign">회원가입하기</S.StyledLink>
-      </text>
+      <S.Text>
+        이미 계정이 있다면?<S.StyledLink to="/Login">로그인</S.StyledLink>
+      </S.Text>
     </S.LoginWrapper>
     </S.Body>
   );
 }
 
-export default Login;
+export default Sign;
