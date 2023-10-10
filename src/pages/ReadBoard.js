@@ -61,7 +61,7 @@ function ReadBoard() {
           }}
         >
           <span id="popup_okay">정말로 삭제하시겠습니까?</span>
-          <button id="check" onClick={() => setIsModalOpen(false)}>
+          <button id="check2" onClick={() => setIsModalOpen(false)}>
             취소
           </button>
           <button id="check1" onClick={() => setIsModalOpen(false)}>

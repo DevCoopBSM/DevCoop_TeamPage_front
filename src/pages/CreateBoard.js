@@ -62,6 +62,7 @@ function CreateBoard() {
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         style={{ overlay: { backgroundColor: "rgba(0,0,0,0.40)" } }}
+        id="modal"
       >
         <span id="popup_okay">공지글로 등록 하시겠어요?</span>
         {/* 확인했어요 버튼 클릭 시 sendDataToDB 함수 호출 */}
