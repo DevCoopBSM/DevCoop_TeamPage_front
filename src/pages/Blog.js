@@ -26,7 +26,7 @@ function Blog() {
 
   useEffect(() => {
     axios
-      .get("http://192.168.10.1:5000/api/showboard")
+      .get("http://10.10.0.15:5000/api/showboard")
       .then((response) => {
         // 성공했을 때 로직
         console.log("성공");
@@ -87,7 +87,7 @@ function Blog() {
         </Modal>
       </div>
       <div className="pages">
-        {data.map((page, index) => {
+        {data.map((data, index) => {
           if (index < 11) {
             //11넘으면안보이게
             return (
@@ -97,9 +97,8 @@ function Blog() {
                 style={{ top: `${index * 123}px` }}
               >
                 <div className="page-box">
-                  <div className="mini-title">{page.title}</div>
-                  <div className="writer">{page.writer}</div>
-                  <div className="date">{page.date}</div>
+                  <div className="mini-title">{data.title}</div>
+                  <div className="writer">{data.uuid}</div>
                 </div>
               </div>
             );
