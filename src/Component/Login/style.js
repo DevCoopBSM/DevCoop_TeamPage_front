@@ -1,4 +1,7 @@
-.login-wrapper {
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+export const LoginWrapper = styled.div`
   display: flex;
   outline: auto;
   width: 600px;
@@ -9,39 +12,41 @@
   border-radius: 30px;
   outline-color: white;
   box-shadow: 5px 5px 5px 5px gray;
-}
-input {
+  font-family: 'Inter', sans-serif;
+`;
+
+export const Input = styled.input`
   width: 500px;
   height: 50px;
   border-radius: 10px;
   box-shadow: 2px 2px gray;
   border-color: white;
-}
-body {
+`;
+
+export const Body = styled.body`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 13% 0 0 0;
-}
-h2 {
+`;
+
+export const H2 = styled.h2`
   text-align: center;
-}
-#login {
+`;
+
+export const LoginButton = styled(Input)`
   background-color: #ffe766;
   color: white;
   font-size: 20px;
   text-shadow: 2px 2px 2px gray;
-}
-#chicken {
+`;
+
+export const ChickenImage = styled.img`
   width: 100px;
   height: 100px;
-}
-a:link {
+`;
+
+export const StyledLink = styled(Link)`
   color: #ffe766;
-}
-a:visited {
-  color: #ffe766;
-}
-a {
   text-decoration-line: none;
-}
+`;
