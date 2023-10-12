@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "../Styles/CreateBoard.css";
 import Modal from "react-modal";
 import checkpopup from "../assets/mini_image.png";
+import Navbar from "../Component/navbar";
 
-// axios import 추가
 import axios from "axios";
 
 function CreateBoard() {
@@ -31,6 +31,8 @@ function CreateBoard() {
 
   return (
     <div id="all-wrap">
+      <Navbar />
+
       <div id="main-title">데브쿠프 공지사항 - 글쓰기</div>
       <div className="title-box">
         {/* 제목 입력 시 상태 업데이트 */}
@@ -66,7 +68,7 @@ function CreateBoard() {
       >
         <span id="popup_okay">공지글로 등록 하시겠어요?</span>
         {/* 확인했어요 버튼 클릭 시 sendDataToDB 함수 호출 */}
-        <button id="check" onClick={sendDataToDB}>
+        <button id="check" onClick={(sendDataToDB, closeModal)}>
           확인했어요
         </button>
         <img src={checkpopup} alt="popup" id="popup" />
