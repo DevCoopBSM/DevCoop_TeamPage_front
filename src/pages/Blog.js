@@ -34,6 +34,7 @@ function Blog() {
         console.log("성공");
         if (Array.isArray(response.data)) {
           setData(response.data);
+          console.log(response.data);
         } else {
           console.error("Data is not an array");
         }
