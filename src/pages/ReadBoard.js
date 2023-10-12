@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../Styles/ReadBoard.css";
 import Modal from "react-modal";
 import checkpopup from "../assets/mini_image.png";
+import Navbar from "../Component/navbar";
 
 function ReadBoard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,6 +42,8 @@ function ReadBoard() {
 
   return (
     <>
+      <Navbar />
+
       <div id="mini-title">DevCoop 공지사항</div>
       <div className="board-box">
         <div className="main-title">테스트용 데브쿠프 공지사항</div>
