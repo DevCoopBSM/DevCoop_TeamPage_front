@@ -60,7 +60,7 @@ function Project() {
             </p>
             <p id="head1">아리페이</p>
           </p>
-          <button id="probtn">>프로젝트보러가기</button>
+          <button id="probtn">{'>'}프로젝트보러가기</button>
         </div>
       </div>
       
