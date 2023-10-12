@@ -4,6 +4,10 @@ import Project from "./Project";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./App.css";
 
+import { BrowserRouter } from "react-router-dom";
+
+import Routers from "./Component/router";
+
 function App() {
   return (
     <BrowserRouter>
@@ -12,7 +16,9 @@ function App() {
         <Route path="/Sign" element={<Sign/>} />
         <Route path="/Project"element={<Project/>} />
       </Routes>
+      <Routers />
     </BrowserRouter>
+
   );
 }
 
