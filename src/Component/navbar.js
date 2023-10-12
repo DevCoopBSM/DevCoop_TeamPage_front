@@ -9,7 +9,7 @@ const Mainpg = () => {
       {/* navbar */}
       <M.NavbarContainer>
         <M.LogoContainer>
-          <M.LogoImage src="../src/assets/nav_logo.png" alt="Logo" />
+          <M.LogoImage src="../assets/nav_logo.png" alt="Logo" />
           <M.LogoText>DevCoop</M.LogoText>
         </M.LogoContainer>
         <M.ButtonContainer>
