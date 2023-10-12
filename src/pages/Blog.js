@@ -3,7 +3,7 @@ import "../Styles/Blog.css";
 import checkpopup from "../assets/mini_image.png";
 import Modal from "react-modal";
 import Pagination from "react-js-pagination";
-import axios from "axios";
+import { axiosInstance } from "../util/axios";
 import Navbar from "../Component/navbar";
 
 /*feat : 새로운 기능 추가
@@ -27,8 +27,8 @@ function Blog() {
   }
 
   useEffect(() => {
-    axios
-      .get("http://10.10.0.15:5000/api/showboard")
+    axiosInstance
+      .get("/showboard")
       .then((response) => {
         // 성공했을 때 로직
         console.log("성공");
