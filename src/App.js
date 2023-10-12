@@ -4,13 +4,16 @@ import CreateBoard from "./pages/CreateBoard";
 import Paging from "./pages/Paging";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./App.css";
-import Login from "./Login";
-import Sign from "./Sign";
+import Login from "./Component/Login/Loginpage";
+import Sign from "./Component/Sign/Signpage";
+import Mainpage from "./Component/Mainpage/Mainpg";
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Mainpage />} />
         <Route path="/Blog" element={<Blog />} />
         <Route path="/ReadBoard" element={<ReadBoard />} />
         <Route path="/CreateBoard" element={<CreateBoard />} />
