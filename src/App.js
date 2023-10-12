@@ -1,21 +1,11 @@
-import ReadBoard from "./pages/ReadBoard";
-import CreateBoard from "./pages/CreateBoard";
-import Paging from "./pages/Paging";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import Routers from "./Component/router";
 import "./App.css";
-import Login from "./Login";
-import Sign from "./Sign";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/ReadBoard" element={<ReadBoard />} />
-        <Route path="/CreateBoard" element={<CreateBoard />} />
-        <Route path="/Paging" element={<Paging />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Sign" element={<Sign />} />
-      </Routes>
+      <Routers />
     </BrowserRouter>
   );
 }
