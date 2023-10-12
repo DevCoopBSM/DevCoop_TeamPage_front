@@ -4,6 +4,8 @@ import checkpopup from "../assets/mini_image.png";
 import Modal from "react-modal";
 import Pagination from "react-js-pagination";
 import axios from "axios";
+import Navbar from "../Component/navbar";
+
 /*feat : 새로운 기능 추가
 fix : 버그 수정
 docs : 문서 수정
@@ -13,7 +15,7 @@ test : 테스트 코드, 리펙토링 테스트 코드 추가
 chore : 빌드 업무 수정, 패키지 매니저 수정*/
 
 function Blog() {
-  const [manager, setManager] = useState();
+  const [manager, setManager] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setData] = useState([]);
   function write(e) {
@@ -58,10 +60,10 @@ function Blog() {
     );
   };
 
-  const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
   return (
     <div id="all">
+      <Navbar />
       <div className="header">
         <div className="title">데브쿠프 공지사항</div>
         <button id="to-write" onClick={write}>
