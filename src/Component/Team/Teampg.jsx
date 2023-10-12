@@ -1,8 +1,42 @@
 // src/components/TeamSection.js
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as S from "./style";
 
+
+  
+
 const TeamSection = () => {
+  const [isTextVisible, setTextVisible] = useState(false);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTextVisible(true);
+        } else {
+          setTextVisible(false);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    if (textRef.current) {
+      observer.observe(textRef.current);
+    }
+
+    return () => {
+      if (textRef.current) {
+        observer.unobserve(textRef.current);
+      }
+    };
+  }, []);
   return (
     <S.TeamSectionContainer id="팀">
       <S.TeamTextRight>DevCoop, Develop & Cooperation </S.TeamTextRight>
