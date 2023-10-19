@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const fontface = styled.span`
   font-family: 'Inter';
@@ -25,6 +25,17 @@ export const TransparentBlackBox = styled.div`
   z-index: 1;
 `;
 
+const slideAndFade = keyframes`
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
 export const DevCoopText = styled(fontface)`
   position: absolute;
   top: 65%;
@@ -36,4 +47,5 @@ export const DevCoopText = styled(fontface)`
   font-weight: 1000;
   line-height: normal;
   z-index: 2;
+  animation: ${slideAndFade} 0.8s ease-in-out; /* 1초 동안 위에서 아래로 내려오면서 페이드 인 */
 `;
