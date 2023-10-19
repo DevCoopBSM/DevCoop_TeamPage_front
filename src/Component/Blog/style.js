@@ -134,3 +134,5 @@ export const Writer = styled.div`
   text-align: left;
   color: #565656;
 `;
+
+export const Link = styled.div``;
