@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../Styles/ReadBoard.css";
 import Modal from "react-modal";
 import checkpopup from "../assets/mini_image.png";
 import Navbar from "../Component/navbar";
+import Board from "./Board";
 
 function ReadBoard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,6 +16,10 @@ function ReadBoard() {
   const handleEditClick = () => {
     navigate("/CreateBoard");
   };
+  const { index } = useParams();
+
+  const [loading, setLoading] = useState(true);
+  const [board, setBoard] = useState({});
   useEffect(() => {
     // DELETE 요청
     axios
@@ -39,11 +44,21 @@ function ReadBoard() {
         console.log(error);
       });
   }, []);
+  const getBoard = async () => {
+    const resp = await (
+      await axios.get(`http://10.10.0.15:5000/api/showboard/{index}`)
+    ).data;
+    setBoard(resp.data);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getBoard();
+  }, []);
 
   return (
     <>
       <Navbar />
-
       <div id="mini-title">DevCoop 공지사항</div>
       <div className="board-box">
         <div className="main-title">테스트용 데브쿠프 공지사항</div>
@@ -73,14 +88,12 @@ function ReadBoard() {
           <img src={checkpopup} alt="popup" id="popup" />
         </Modal>
         <div className="content">
-          여기부터는 본문입니다! 여기부터는 본문입니다! 여기부터는 본문입니다!
-          여기부터는 본문입니다! 여기부터는 본문입니다! 여기부터는 본문입니다!
-          여기부터는 본문입니다! 여기부터는 본문입니다! 여기부터는 본문입니다!
-          여기부터는 본문입니다! 여기부터는 본문입니다! 여기부터는 본문입니다!
-          여기부터는 본문입니다! 여기부터는 본문입니다! 여기부터는 본문입니다!
-          여기부터는 본문입니다! 여기부터는 본문입니다! 여기부터는 본문입니다!
-          여기부터는 본문입니다! 여기부터는 본문입니다! 여기부터는 본문입니다!
-          여기부터는 본문입니다! 여기부터는 본문입니다! 여기부터는 본문입니다!
+          <Board
+            idx={board.idx}
+            title={board.title}
+            contents={board.contents}
+            createdBy={board.createdBy}
+          />
         </div>
       </div>
     </>

@@ -16,10 +16,6 @@ function Blog() {
     else setIsModalOpen(true);
   }
 
-  function Board(index) {
-    window.location.href = "/ReadBoard";
-  }
-
   useEffect(() => {
     axios
       .get("http://10.10.0.15:5000/api/showboard")
@@ -72,7 +68,9 @@ function Blog() {
                 style={{ top: `${index * 123}px` }}
               >
                 <S.PageBox>
-                  <S.MiniTitle>{data.title}</S.MiniTitle>
+                  <S.MiniTitle>
+                    <S.Link to={`/ReadBoard/${index}`}>{data.title}</S.Link>
+                  </S.MiniTitle>
                   <S.Writer>{data.uuid}</S.Writer>
                 </S.PageBox>
               </S.Page>
