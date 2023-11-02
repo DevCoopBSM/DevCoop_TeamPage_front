@@ -89,17 +89,22 @@ export const PopupImage = styled.img`
 `;
 
 export const PagesContainer = styled.div`
-  /* 페이지 컨테이너 스타일링 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px; // 페이지 사이의 간격
 `;
 
 export const Page = styled.div`
-  /* 페이지 스타일링 */
+  position: relative;
+  margin-top: ${(props) => props.idx * 123}px;
 `;
 
 export const PageBox = styled.div`
   position: absolute;
-  top: 240px;
-  left: 200px;
+  top: 250px;
+  left: -565px;
   width: 1140px;
   height: 110px;
   background: #ffffff;
@@ -127,6 +132,20 @@ export const Writer = styled.div`
   height: 22px;
   left: 455px;
   top: 67px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  align-items: center;
+  text-align: left;
+  color: #565656;
+`;
+
+export const Date = styled.div`
+  position: absolute;
+  width: 400px;
+  height: 22px;
+  left: 55px;
+  top: 26px;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
