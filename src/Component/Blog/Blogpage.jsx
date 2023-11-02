@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import checkpopup from ".././../assets/mini_image.png";
 import Modal from "react-modal";
-import axios from "axios";
+import { axiosInstance } from "../util/axios";
 import Navbar from "../navbar";
 import * as S from "./style";
 
@@ -17,8 +17,8 @@ function Blog() {
   }
 
   useEffect(() => {
-    axios
-      .get("http://10.10.0.15:5000/api/showboard")
+    axiosInstance
+      .get("/showboard")
       .then((response) => {
         console.log("성공");
         if (Array.isArray(response.data)) {
