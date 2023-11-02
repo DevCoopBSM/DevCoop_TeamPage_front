@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import checkpopup from ".././../assets/mini_image.png";
 import Modal from "react-modal";
 import axios from "axios";
@@ -18,7 +17,7 @@ function Blog() {
 
   useEffect(() => {
     axios
-      .get("http://10.10.0.15:5000/api/showboard")
+      .get("http://10.129.57.6:5000/api/blog")
       .then((response) => {
         console.log("성공");
         if (Array.isArray(response.data)) {
@@ -62,16 +61,13 @@ function Blog() {
         {data.map((data, index) => {
           if (index < 11) {
             return (
-              <S.Page
-                key={index}
-                className={`page page-${index}`}
-                style={{ top: `${index * 123}px` }}
-              >
+              <S.Page key={index} idx={index} className={`page page-${index}`}>
                 <S.PageBox>
                   <S.MiniTitle>
                     <S.Link to={`/ReadBoard/${index}`}>{data.title}</S.Link>
                   </S.MiniTitle>
                   <S.Writer>{data.uuid}</S.Writer>
+                  <S.Date>{data.date}</S.Date>
                 </S.PageBox>
               </S.Page>
             );
