@@ -16,19 +16,18 @@ function Blog() {
     else setIsModalOpen(true);
   }
 
-  useEffect(() => {
+ useEffect(() => {
     axiosInstance
       .get("/showboard")
       .then((response) => {
-        console.log("성공");
         if (Array.isArray(response.data)) {
           setData(response.data);
         } else {
-          console.error("Data is not an array");
+          throw new Error("Data received from server is not an array");
         }
       })
       .catch((error) => {
-        console.log("실패", error);
+        console.error("An error occurred while fetching data: ", error);
       });
   }, []);
 
