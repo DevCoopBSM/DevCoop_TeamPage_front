@@ -61,15 +61,23 @@ function Blog() {
         {data.map((data, index) => {
           if (index < 11) {
             return (
-              <S.Page key={index} idx={index} className={`page page-${index}`}>
-                <S.PageBox>
-                  <S.MiniTitle>
-                    <S.Link to={`/ReadBoard/${index}`}>{data.title}</S.Link>
-                  </S.MiniTitle>
-                  <S.Writer>{data.uuid}</S.Writer>
-                  <S.Date>{data.date}</S.Date>
-                </S.PageBox>
-              </S.Page>
+              <S.Link to={`/ReadBoard/${data.id}`}>
+                <S.Page
+                  key={index}
+                  idx={index}
+                  className={`page page-${index}`}
+                >
+                  <S.PageBox>
+                    <S.MiniTitle>
+                      <S.Link to={`/ReadBoard/${index}`}>{data.title}</S.Link>
+                    </S.MiniTitle>
+                    <S.Writer>{data.uuid}</S.Writer>
+                    <S.Date>
+                      {new Date(data.date).toISOString().split("T")[0]}
+                    </S.Date>
+                  </S.PageBox>
+                </S.Page>
+              </S.Link>
             );
           }
           return null;
