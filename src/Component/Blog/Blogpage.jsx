@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import checkpopup from ".././../assets/mini_image.png";
 import Modal from "react-modal";
-import { axiosInstance } from "../util/axios";
+import { axiosInstance } from "../../util/axios";
 import Navbar from "../navbar";
 import * as S from "./style";
 
