@@ -18,7 +18,7 @@ function Blog() {
 
  useEffect(() => {
     axiosInstance
-      .get("/showboard")
+      .get("/blog")
       .then((response) => {
         if (Array.isArray(response.data)) {
           setData(response.data);
