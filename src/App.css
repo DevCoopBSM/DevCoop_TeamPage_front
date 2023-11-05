@@ -251,3 +251,7 @@ body {
 .foot-wrapeer{
   margin-top: 500px;
 }
+@font-face {
+    font-family: 'Inter';
+    src: url('./Inter.ttf') format('truetype');
+  }
