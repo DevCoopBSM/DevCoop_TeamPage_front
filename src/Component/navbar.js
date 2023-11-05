@@ -2,6 +2,7 @@
 import React from 'react';
 import * as M from "./Mainpage/style";
 import { Link } from 'react-router-dom';
+import logo from "../image/Logo.png"; // 로고 이미지 import
 
 const Mainpg = () => {
   return (
@@ -9,7 +10,7 @@ const Mainpg = () => {
       {/* navbar */}
       <M.NavbarContainer>
         <M.LogoContainer>
-          <M.LogoImage src="../assets/nav_logo.png" alt="Logo" />
+          <M.LogoImage src={logo} alt="Logo" /> {/* src 속성값을 import한 logo로 변경 */}
           <M.LogoText>DevCoop</M.LogoText>
         </M.LogoContainer>
         <M.ButtonContainer>
