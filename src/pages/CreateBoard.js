@@ -45,12 +45,11 @@ function CreateBoard() {
       </div>
       <div className="content-box">
         {/* 본문 입력 시 상태 업데이트 */}
-        <input
-          type="text"
+        <textarea
           id="content"
           placeholder="본문을 입력해주세요"
           onChange={(e) => setContent(e.target.value)}
-        ></input>
+        />
       </div>
 
       {/* 모달 창이 열리게 변경 */}

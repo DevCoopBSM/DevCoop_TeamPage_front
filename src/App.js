@@ -6,9 +6,8 @@ import ReadBoard from "./pages/ReadBoard";
 import CreateBoard from "./pages/CreateBoard";
 import Paging from "./pages/Paging";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Routers from "./Component/router";
 import "./App.css";
-import Login from "./Login";
-import Sign from "./Sign";
 
 function App() {
   return (
@@ -26,6 +25,5 @@ function App() {
     </BrowserRouter>
   );
 }
-
 
 export default App;
