@@ -2,7 +2,7 @@
 import React from 'react';
 import * as M from "./Mainpage/style";
 import { Link } from 'react-router-dom';
-import logo from "../image/Logo.png"; // 로고 이미지 import
+import logo from "../image/Logo.png"; 
 
 const Mainpg = () => {
   return (
