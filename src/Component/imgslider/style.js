@@ -1,5 +1,13 @@
 import styled, { keyframes } from "styled-components";
 
+export const SliderImageWrapper = styled.div`
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Add a smooth transition effect */
+  width: ${(props) => props.children.length * 100}%; /* Adjust the width based on the number of images */
+`;
+
+
+
 export const fontface = styled.span`
   font-family: 'Inter';
   src: url('Inter.ttf') format('truetype'); /* 폰트 파일 경로와 형식에 따라 수정 */
@@ -12,10 +20,10 @@ export const ImageSliderContainer = styled.div`
   position: relative;
   width: 100%;
   height: 700px;
-  overflow: hidden;
+  overflow: hidden; /* Add this line */
   margin-top: 80px; // navbar 크기에 맞추어 수정
-  
 `;
+
 
 export const TransparentBlackBox = styled.div`
   position: absolute;
