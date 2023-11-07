@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import { axiosInstance } from "../../util/axios";
 import Navbar from "../navbar";
 import * as S from "./style";
-//djd
+
 function Blog() {
   const [manager, setManager] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
