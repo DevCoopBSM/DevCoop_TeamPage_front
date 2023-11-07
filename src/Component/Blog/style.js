@@ -95,10 +95,9 @@ export const PagesContainer = styled.div`
   justify-content: flex-start;
   gap: 20px; // 페이지 사이의 간격
 `;
-
 export const Page = styled.div`
   position: relative;
-  margin-top: ${(props) => props.idx * 123}px;
+  margin-top: ${(props) => (props.idx > 0 ? "114px" : "0px")};
 `;
 
 export const PageBox = styled.div`
