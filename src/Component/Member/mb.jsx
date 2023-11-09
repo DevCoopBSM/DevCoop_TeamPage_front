@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import data from "./data";
 import img from "../../image/button.png";
 import buttonoff from "../../image/buttonoff.png";
 
