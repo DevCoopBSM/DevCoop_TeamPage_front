@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../Styles/Blog.css";
 import checkpopup from "../assets/mini_image.png";
 import Modal from "react-modal";
 import Pagination from "react-js-pagination";
