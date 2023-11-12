@@ -8,6 +8,7 @@ function Login() {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const Navigate = useNavigate();
+  const history = useNavigate();
 
   const handleUserNameChange = (event) => {
     setUserName(event.target.value);

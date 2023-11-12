@@ -24,6 +24,7 @@ const Routers = () => {
       <Route path="/Login" element={<Login />} />
       <Route path="/Sign" element={<Sign />} />
       <Route path="/Project" element={<Project />} />
+      <Route path="/ReadBoard/:id" element={<ReadBoard />} />
     </Routes>
   );
 };
