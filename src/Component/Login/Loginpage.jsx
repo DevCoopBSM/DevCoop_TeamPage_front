@@ -7,6 +7,7 @@ import axios from "axios";
 function Login() {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const Navigate = useNavigate();
   const history = useNavigate();
 
   const handleUserNameChange = (event) => {
@@ -27,7 +28,7 @@ function Login() {
       });
       console.log(response.data); // 서버에서 전달된 토큰 출력
       // 로그인 성공 후 메인 페이지로 이동
-      history.push("/main");
+      Navigate.push("/main");
     } catch (error) {
       console.error(error);
       // 로그인 실패 시 에러 처리
