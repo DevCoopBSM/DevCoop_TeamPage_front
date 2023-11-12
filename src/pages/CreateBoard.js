@@ -9,7 +9,7 @@ import { axiosInstance } from "../util/axios";
 function CreateBoard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [title, setTitle] = useState(""); // 제목 상태 추가
-  const [content, setContent] = useState(""); // 본문 상태 추가
+  const [detail, setDetail] = useState(""); // 본문 상태 추가
 
   const closeModal = () => setIsModalOpen(false);
 
@@ -17,7 +17,7 @@ function CreateBoard() {
   const sendDataToDB = () => {
     axiosInstance.post("/create", {
       title: title,
-      content: content,
+      detail: detail,
     });      
   };
 
@@ -40,7 +40,7 @@ function CreateBoard() {
         <textarea
           id="content"
           placeholder="본문을 입력해주세요"
-          onChange={(e) => setContent(e.target.value)}
+          onChange={(e) => setDetails(e.target.value)}
         />
       </div>
 
