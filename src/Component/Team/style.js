@@ -30,7 +30,7 @@ export const TeamText = styled.div`
   margin-right: 360px; // 텍스트 간격
   text-align: left;
   opacity: ${props => props.isVisible ? 1 : 0};
-  transform: translateY(${props => props.isVisible ? 0 : '-100%'});
+  
   transition: opacity 1s, transform 1s;
 `;
 
