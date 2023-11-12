@@ -27,6 +27,12 @@ export const TabButtonWithText = styled.button`
   background-repeat: no-repeat;
   filter: brightness(${(props) => (props.active ? 1 : 0.7)});
   transition: filter 0.3s;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 
   &:hover {
     filter: brightness(1);
