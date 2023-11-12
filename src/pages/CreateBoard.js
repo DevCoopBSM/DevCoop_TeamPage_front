@@ -40,7 +40,7 @@ function CreateBoard() {
         <textarea
           id="content"
           placeholder="본문을 입력해주세요"
-          onChange={(e) => setDetails(e.target.value)}
+          onChange={(e) => setDetail(e.target.value)}
         />
       </div>
 
