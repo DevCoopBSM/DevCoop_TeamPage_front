@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import React from 'react';
 
 function Project() {
-  return (
+  return ( 
   <div class="pro1-wrap">
     <div class="ar2"><img id="ariii" src={ari} alt="ari image"></img></div>
     <div class="headline-text">

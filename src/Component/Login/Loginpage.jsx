@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import chick from "../../assets/DevCoopL.svg";
 import axios from "axios";
+import Navbar from "../navbar";
 
 function Login() {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const Navigate = useNavigate();
-  const history = useNavigate();
 
   const handleUserNameChange = (event) => {
     setUserName(event.target.value);
@@ -37,6 +37,7 @@ function Login() {
 
   return (
     <S.Body>
+      <Navbar />
       <S.LoginWrapper>
         <S.ChickenImage src={chick} alt="chicken image" />
         <S.H2>Dev Coop</S.H2>
