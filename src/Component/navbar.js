@@ -4,6 +4,7 @@ import * as M from "./Mainpage/style";
 import { Link } from 'react-router-dom';
 import logo from "../image/Logo.png"; 
 
+
 const Mainpg = () => {
   return (
     <body>

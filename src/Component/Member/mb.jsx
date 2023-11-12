@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as S from "./style";
 import button from "../../image/button.png";
+import img from "../../image/button.png";
 import buttonoff from "../../image/buttonoff.png";
 
 const TabButtonWithText = ({ onClick, active, text }) => (

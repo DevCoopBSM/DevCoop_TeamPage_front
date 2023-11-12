@@ -1,19 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import chick from "../../assets/DevCoopL.svg";
-import Sign from "../Sign/Signpage.jsx";
+import axios from "axios";
 
 function Login() {
-  
+  const [userName, setUserName] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const history = useNavigate();
+
+  const handleUserNameChange = (event) => {
+    setUserName(event.target.value);
+  };
+
+  const handleUserPasswordChange = (event) => {
+    setUserPassword(event.target.value);
+  };
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post("/login", {
+        name: userName,
+        pw: userPassword,
+      });
+      console.log(response.data); // 서버에서 전달된 토큰 출력
+      // 로그인 성공 후 메인 페이지로 이동
+      history.push("/main");
+    } catch (error) {
+      console.error(error);
+      // 로그인 실패 시 에러 처리
+    }
+  };
+
   return (
     <S.Body>
       <S.LoginWrapper>
         <S.ChickenImage src={chick} alt="chicken image" />
         <S.H2>Dev Coop</S.H2>
-        <form method="post" id="Login-form">
-          <S.Input type="text" name="userName" placeholder="이메일" />
+        <form onSubmit={handleLogin} id="Login-form">
+          <S.Input
+            type="text"
+            name="userName"
+            placeholder="이메일"
+            value={userName}
+            onChange={handleUserNameChange}
+          />
           <br />
-          <S.Input type="password" name="userPassword" placeholder="비밀번호" />
+          <S.Input
+            type="password"
+            name="userPassword"
+            placeholder="비밀번호"
+            value={userPassword}
+            onChange={handleUserPasswordChange}
+          />
           <br />
           <br />
           <S.LoginButton type="submit" id="login" value="로그인" />
