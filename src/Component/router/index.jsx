@@ -22,6 +22,7 @@ const Routers = () => {
       <Route path="/Paging" element={<Paging />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/Sign" element={<Sign />} />
+      <Route path="/ReadBoard/:id" element={<ReadBoard />} />
     </Routes>
   );
 };
