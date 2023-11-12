@@ -9,7 +9,7 @@ import { axiosInstance } from "../util/axios";
 function CreateBoard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [title, setTitle] = useState(""); // 제목 상태 추가
-  const [content, setContent] = useState(""); // 본문 상태 추가
+  const [detail, setContent] = useState(""); // 본문 상태 추가
 
   const closeModal = () => setIsModalOpen(false);
 
@@ -17,8 +17,8 @@ function CreateBoard() {
   const sendDataToDB = () => {
     axiosInstance.post("/create", {
       title: title,
-      content: content,
-    });      
+      detail: detail,
+    });
   };
 
   return (

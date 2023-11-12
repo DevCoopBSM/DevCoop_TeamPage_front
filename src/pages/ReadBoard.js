@@ -5,7 +5,6 @@ import "../Styles/ReadBoard.css";
 import Modal from "react-modal";
 import checkpopup from "../assets/mini_image.png";
 import Navbar from "../Component/navbar";
-import Board from "./Board";
 
 function ReadBoard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
