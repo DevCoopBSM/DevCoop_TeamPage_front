@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import chick from "../../assets/DevCoopL.svg";
 import axios from "axios";
@@ -7,7 +7,7 @@ import axios from "axios";
 function Login() {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleUserNameChange = (event) => {
     setUserName(event.target.value);

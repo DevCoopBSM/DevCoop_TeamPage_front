@@ -16,52 +16,57 @@ function ReadBoard() {
   const handleEditClick = () => {
     navigate("/CreateBoard");
   };
-  const { index } = useParams();
 
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await axios.delete("http://10.129.57.6:5000/api/blog/1");
+        console.log("DELETE 요청 완료");
+
+        await axios.put("http://10.129.57.6:5000/api/blog/1", {
+          title: "Updated Title",
+          content: "Updated Content",
+        });
+        console.log("PUT 요청 완료");
+
+        setLoading(false);
+      } catch (error) {
+        console.log("오류 발생:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const { id } = useParams(); // URL에서 게시물 ID 가져오기
   const [board, setBoard] = useState({});
-  useEffect(() => {
-    // DELETE 요청
-    axios
-      .delete("http://10.10.0.15:5000/api/showboard/1")
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    // PUT 요청
-    axios
-      .put("http://10.10.0.15:5000/api/showboard/1", {
-        title: "Updated Title",
-        content: "Updated Content",
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-  const getBoard = async () => {
-    const resp = await (
-      await axios.get(`http://10.10.0.15:5000/api/showboard/{index}`)
-    ).data;
-    setBoard(resp.data);
-    setLoading(false);
-  };
 
   useEffect(() => {
+    const getBoard = async () => {
+      try {
+        const resp = await axios.get(`http://10.129.57.6:5000/api/blog/${id}`);
+        if (resp.data) {
+          setBoard(resp.data);
+        } else {
+          console.log("서버로부터 데이터를 받아오지 못했습니다.");
+        }
+      } catch (error) {
+        console.error("데이터를 가져오는 중 오류가 발생했습니다: ", error);
+      }
+      setLoading(false);
+    };
+
     getBoard();
-  }, []);
+  }, [id]);
 
   return (
     <>
       <Navbar />
       <div id="mini-title">DevCoop 공지사항</div>
       <div className="board-box">
-        <div className="main-title">테스트용 데브쿠프 공지사항</div>
+        <div className="main-title">{board.title}</div>
         <button onClick={handleEditClick} id="edit">
           수정
         </button>
@@ -87,14 +92,7 @@ function ReadBoard() {
           </button>
           <img src={checkpopup} alt="popup" id="popup" />
         </Modal>
-        <div className="content">
-          <Board
-            idx={board.idx}
-            title={board.title}
-            contents={board.contents}
-            createdBy={board.createdBy}
-          />
-        </div>
+        <div className="content">{board.detail}</div>
       </div>
     </>
   );

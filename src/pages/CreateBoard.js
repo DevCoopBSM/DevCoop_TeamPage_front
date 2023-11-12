@@ -16,7 +16,7 @@ function CreateBoard() {
   // DB로 값 전송 함수
   const sendDataToDB = () => {
     axios
-      .post("http://10.10.0.15:5000/api/showboard", {
+      .post("http://10.129.57.6:5000/api/blog", {
         title: title,
         content: content,
       })

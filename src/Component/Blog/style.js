@@ -153,4 +153,4 @@ export const Date = styled.div`
   color: #565656;
 `;
 
-export const Link = styled.div``;
+export const Detail = styled.div``;
