@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import chick from "../../assets/DevCoopL.svg";
 import axios from "axios";
@@ -7,7 +7,7 @@ import axios from "axios";
 function Login() {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const history = useHistory();
+  const Navigate = useNavigate();
 
   const handleUserNameChange = (event) => {
     setUserName(event.target.value);
@@ -27,7 +27,7 @@ function Login() {
       });
       console.log(response.data); // 서버에서 전달된 토큰 출력
       // 로그인 성공 후 메인 페이지로 이동
-      history.push("/main");
+      Navigate.push("/main");
     } catch (error) {
       console.error(error);
       // 로그인 실패 시 에러 처리
