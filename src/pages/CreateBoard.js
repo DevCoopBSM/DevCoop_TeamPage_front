@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import checkpopup from "../assets/mini_image.png";
 import Navbar from "../Component/navbar";
 
-import axios from "axios";
+import { axiosInstance } from "../util/axios";
 
 function CreateBoard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,18 +15,10 @@ function CreateBoard() {
 
   // DB로 값 전송 함수
   const sendDataToDB = () => {
-    axios
-      .post("http://10.129.57.6:5000/api/blog", {
-        title: title,
-        content: content,
-      })
-      .then((response) => {
-        console.log("성공");
-        closeModal();
-      })
-      .catch((error) => {
-        console.log("실패", error);
-      });
+    axiosInstance.post("/create", {
+      title: title,
+      content: content,
+    });      
   };
 
   return (
@@ -67,7 +59,13 @@ function CreateBoard() {
       >
         <span id="popup_okay">공지글로 등록 하시겠어요?</span>
         {/* 확인했어요 버튼 클릭 시 sendDataToDB 함수 호출 */}
-        <button id="check" onClick={(sendDataToDB, closeModal)}>
+        <button
+          id="check"
+          onClick={() => {
+            sendDataToDB();
+            closeModal();
+          }}
+        >
           확인했어요
         </button>
         <img src={checkpopup} alt="popup" id="popup" />
