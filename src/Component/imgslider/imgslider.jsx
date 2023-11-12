@@ -30,7 +30,7 @@ const ImageSlider = () => {
         <S.TransparentBlackBox />
         <S.SliderImageWrapper
           style={{
-            transform: `translateX(-${currentImageIndex * 100}%)`,
+            transform: `translateX(-${currentImageIndex * 50}%)`,
             transition: transition ? "transform 0.5s ease-in-out" : "none",
           }}
           onTransitionEnd={handleTransitionEnd}
@@ -39,8 +39,9 @@ const ImageSlider = () => {
             <img
               key={index}
               src={image}
-              alt="DEVCOOP"
+              alt={`DEVCOOP ${index + 1}`}
               className="slider-image"
+              style={{ width: "100%" }}
             />
           ))}
         </S.SliderImageWrapper>
@@ -51,4 +52,3 @@ const ImageSlider = () => {
 };
 
 export default ImageSlider;
-
