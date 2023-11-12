@@ -7,7 +7,7 @@ const TeamSection = () => {
     <S.ProjectContainer id="프로젝트">
       <S.Project>저희의 프로젝트에요.</S.Project>
       <S.AripaySVG>
-        <a href="https://example.com" target="_blank">
+        <a href="http://pay.bsm-aripay.kr/" target="_blank">
           <img src={Aripay} alt="AriPay 이미지" />
           <div className="overlay-button"></div>
         </a>
