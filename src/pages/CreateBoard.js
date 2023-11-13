@@ -1,25 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/CreateBoard.css";
 import Modal from "react-modal";
 import checkpopup from "../assets/mini_image.png";
 import Navbar from "../Component/navbar";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { axiosInstance } from "../util/axios";
 
 function CreateBoard() {
+  const { id } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [title, setTitle] = useState(""); // 제목 상태 추가
-  const [detail, setContent] = useState(""); // 본문 상태 추가
+  const [detail, setDetail] = useState(""); // 본문 상태 추가
 
   const closeModal = () => setIsModalOpen(false);
+  const navigate = useNavigate();
+
+  const getBoard = async () => {
+    try {
+      const res = await axiosInstance.get(
+        `http://10.129.57.6:5000/api/blog/${id}`,
+      );
+      setTitle(res.data.title);
+      setDetail(res.data.detail);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   // DB로 값 전송 함수
-  const sendDataToDB = () => {
-    axiosInstance.post("/create", {
-      title: title,
-      detail: detail,
-    });
+  const sendDataToDB = async () => {
+    try {
+      if (id) {
+        await axiosInstance.put(`/update/${id}`, {
+          title: title,
+          detail: detail,
+        });
+      } else {
+        await axiosInstance.post("/create", {
+          title: title,
+          detail: detail,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
+
+  useEffect(() => {
+    if (id) {
+      getBoard();
+    }
+  }, []);
 
   return (
     <div id="all-wrap">
@@ -33,6 +65,7 @@ function CreateBoard() {
           id="title"
           placeholder="제목을 입력해주세요"
           onChange={(e) => setTitle(e.target.value)}
+          value={title}
         ></input>
       </div>
       <div className="content-box">
@@ -40,7 +73,8 @@ function CreateBoard() {
         <textarea
           id="content"
           placeholder="본문을 입력해주세요"
-          onChange={(e) => setContent(e.target.value)}
+          onChange={(e) => setDetail(e.target.value)}
+          value={detail}
         />
       </div>
 
@@ -64,6 +98,7 @@ function CreateBoard() {
           onClick={() => {
             sendDataToDB();
             closeModal();
+            navigate("/blog");
           }}
         >
           확인했어요
