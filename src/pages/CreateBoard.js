@@ -45,6 +45,7 @@ function CreateBoard() {
     } catch (err) {
       console.log(err);
     }
+
   };
 
   useEffect(() => {

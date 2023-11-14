@@ -1,10 +1,12 @@
 import React from "react";
 import * as S from "./style";
 import chick from "../../assets/DevCoopL.svg";
+import NavBar from "../navbar";
 
 function Sign() {
   return (
     <S.Body>
+    <NavBar />
     <S.LoginWrapper>
       <S.ChickenImage src={chick} alt="chicken image" />
       <S.H2>Dev Coop</S.H2>

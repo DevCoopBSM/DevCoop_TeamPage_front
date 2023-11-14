@@ -1,13 +1,13 @@
-import './App.css';
-import project1 from "./P1.png"
-import project2 from "./P2.png"
-import project3 from "./P3.png"
-import ari from "./AriPayL_ver2.svg"
+import '../App.css';
+import project1 from "../P1.png"
+import project2 from "../P2.png"
+import project3 from "../P3.png"
+import ari from "../AriPayL_ver2.svg"
 import { Link } from "react-router-dom";
-
+import React from 'react';
 
 function Project() {
-  return (
+  return ( 
   <div class="pro1-wrap">
     <div class="ar2"><img id="ariii" src={ari} alt="ari image"></img></div>
     <div class="headline-text">
@@ -35,9 +35,6 @@ function Project() {
       <div class="pro2-image">
         <img id="pro2" src={project2} alt="project2 image"></img>
       </div>
-
-
-
       <div class="pro3-text">
         <p><p class="text3">쉽고 빠른 결제</p>
           학생증 하나만 제시해 주세요.<br></br>
