@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import chick from "../../assets/DevCoopL.svg";
-import axios from "axios";
 import Navbar from "../navbar";
+import { axiosInstance } from "../../axios";
 
 function Login() {
   const [userName, setUserName] = useState("");
@@ -19,19 +19,21 @@ function Login() {
   };
 
   const handleLogin = async (event) => {
+    
     event.preventDefault();
 
     try {
-      const response = await axios.post("/login", {
-        name: userName,
-        pw: userPassword,
-      });
-      console.log(response.data); // 서버에서 전달된 토큰 출력
-      // 로그인 성공 후 메인 페이지로 이동
-      Navigate.push("/main");
+      const response = await axiosInstance(userName, userPassword);  // 'login' 함수 호출
+
+      if (response.status === 200) {
+        console.log(response.data);  // 서버에서 전달된 토큰 출력
+        // 로그인 성공 후 메인 페이지로 이동
+        Navigate.push("/main");
+      } else {
+        // 로그인 실패 시 에러 처리
+      }
     } catch (error) {
       console.error(error);
-      // 로그인 실패 시 에러 처리
     }
   };
 
