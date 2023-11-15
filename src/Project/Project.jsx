@@ -5,17 +5,18 @@ import project3 from "../P3.png"
 import ari from "../AriPayL_ver2.svg"
 import { Link } from "react-router-dom";
 import React from 'react';
+import NavBar from '../Component/navbar';
 
 function Project() {
   return ( 
-  <div class="pro1-wrap">
-    <div class="ar2"><img id="ariii" src={ari} alt="ari image"></img></div>
-    <div class="headline-text">
-      <p>
-        <p class="head">실물상품권을 학생증으로</p>
-        <p id="head1">아리페이</p>
-      </p>
-    </div>
+  <><NavBar /><div class="pro1-wrap">
+      <div class="ar2"><img id="ariii" src={ari} alt="ari image"></img></div>
+      <div class="headline-text">
+        <p>
+          <p class="head">실물상품권을 학생증으로</p>
+          <p id="head1">아리페이</p>
+        </p>
+      </div>
       <div class="pro1-text">
         <p><p class="text1">편리한 잔액 조회</p>
           알이와 편하게 잔액을 조회해 보세요.<br></br>
@@ -51,18 +52,18 @@ function Project() {
         <div class="headline-text2">
           <p>
             <p class="head3">소중한 상품권,
-            <p class="head3">
-              이젠 알이에게 맡겨주세요.
-            </p>
+              <p class="head3">
+                이젠 알이에게 맡겨주세요.
+              </p>
             </p>
             <p id="head1">아리페이</p>
           </p>
           <button id="probtn">{'>'}프로젝트보러가기</button>
         </div>
       </div>
-      
-      
-  </div>
+
+
+    </div></>
   );
 }
 
