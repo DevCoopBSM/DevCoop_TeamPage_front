@@ -20,6 +20,7 @@
   outline: none;
   width: 900px;
   height: 25px;
+  font-size: 20px;
   top: 240px;
   left: 245px;
   padding: 30px 60px 30px 60px;
@@ -40,13 +41,9 @@
   border-radius: 10px;
   box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
   resize: none;
+  font-family: Inter;
 }
 
-#title::placeholder {
-  color: black;
-  font-weight: 700;
-  font-size: 20px;
-}
 
 #explain::placeholder {
   font-weight: 500;
