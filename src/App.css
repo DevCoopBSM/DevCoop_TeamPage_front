@@ -33,12 +33,16 @@
   line-height:0px;
 }
 #ariii{
-  width:700px;
-  height: 700px;
+  width:400px;
+  height: 400px;
+}
+#ariii2{
+  width:400px;
+  height: 400px;
 }
 .ar2{
   position: relative;
-        left: 250px;
+        left: 450px;
         top: 50px;
 }
 #head1{
@@ -48,8 +52,8 @@
 }
 .headline-text{
   z-index: 2;
-  top :-320px;
-  left: 1000px;
+  top :-205px;
+  left: 900px;
   position: relative;
 }
 .head{
