@@ -1,33 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/CreateBoard.css";
 import Modal from "react-modal";
 import checkpopup from "../assets/mini_image.png";
 import Navbar from "../Component/navbar";
+import { useNavigate, useParams } from "react-router-dom";
 
-import axios from "axios";
+import { axiosInstance } from "../util/axios";
 
 function CreateBoard() {
+  const { id } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [title, setTitle] = useState(""); // 제목 상태 추가
-  const [content, setContent] = useState(""); // 본문 상태 추가
+  const [detail, setDetail] = useState(""); // 본문 상태 추가
 
   const closeModal = () => setIsModalOpen(false);
+  const navigate = useNavigate();
+
+  const getBoard = async () => {
+    try {
+      const res = await axiosInstance.get(
+        `http://10.129.57.6:5000/api/blog/${id}`,
+      );
+      setTitle(res.data.title);
+      setDetail(res.data.detail);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   // DB로 값 전송 함수
-  const sendDataToDB = () => {
-    axios
-      .post("http://10.10.0.15:5000/api/showboard", {
-        title: title,
-        content: content,
-      })
-      .then((response) => {
-        console.log("성공");
-        closeModal();
-      })
-      .catch((error) => {
-        console.log("실패", error);
-      });
+  const sendDataToDB = async () => {
+    try {
+      if (id) {
+        await axiosInstance.put(`/update/${id}`, {
+          title: title,
+          detail: detail,
+        });
+      } else {
+        await axiosInstance.post("/create", {
+          title: title,
+          detail: detail,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
+
+  useEffect(() => {
+    if (id) {
+      getBoard();
+    }
+  }, []);
 
   return (
     <div id="all-wrap">
@@ -41,6 +65,7 @@ function CreateBoard() {
           id="title"
           placeholder="제목을 입력해주세요"
           onChange={(e) => setTitle(e.target.value)}
+          value={title}
         ></input>
       </div>
       <div className="content-box">
@@ -48,14 +73,16 @@ function CreateBoard() {
         <textarea
           id="content"
           placeholder="본문을 입력해주세요"
-          onChange={(e) => setContent(e.target.value)}
+          onChange={(e) => setDetail(e.target.value)}
+          value={detail}
         />
       </div>
 
-      {/* 모달 창이 열리게 변경 */}
-      <button type="button" id="result" onClick={() => setIsModalOpen(true)}>
-        등록하기
-      </button>
+      <div id="result_container">
+        <button type="button" id="result" onClick={() => setIsModalOpen(true)}>
+          등록하기
+        </button>
+      </div>
 
       {/* 확인했어요 버튼 클릭 시 sendDataToDB 함수 호출 */}
 
@@ -67,7 +94,14 @@ function CreateBoard() {
       >
         <span id="popup_okay">공지글로 등록 하시겠어요?</span>
         {/* 확인했어요 버튼 클릭 시 sendDataToDB 함수 호출 */}
-        <button id="check" onClick={(sendDataToDB, closeModal)}>
+        <button
+          id="check"
+          onClick={() => {
+            sendDataToDB();
+            closeModal();
+            navigate("/blog");
+          }}
+        >
           확인했어요
         </button>
         <img src={checkpopup} alt="popup" id="popup" />

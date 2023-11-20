@@ -4,14 +4,17 @@ import * as M from "./Mainpage/style";
 import { Link } from 'react-router-dom';
 import logo from "../image/Logo.png"; 
 
+
 const Mainpg = () => {
   return (
     <body>
       {/* navbar */}
       <M.NavbarContainer>
         <M.LogoContainer>
-          <M.LogoImage src={logo} alt="Logo" /> {/* src 속성값을 import한 logo로 변경 */}
-          <M.LogoText>DevCoop</M.LogoText>
+        <M.LogoText>
+          <Link to="/"><M.LogoImage src={logo} alt="Logo" /></Link> {/* src 속성값을 import한 logo로 변경 */}
+          <Link to="/"><M.Button2>DevCoop</M.Button2></Link>
+        </M.LogoText>
         </M.LogoContainer>
         <M.ButtonContainer>
           <Link to="/team"><M.Button>Team</M.Button></Link>

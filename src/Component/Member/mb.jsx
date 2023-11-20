@@ -1,55 +1,64 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import button from "../../image/button.png";
-import buttonoff from "../../image/buttonoff.png";
+import button from "../../image/Vector.png";
+import buttonoff from "../../image/Vectoroff.png";
+import image1 from "../../image/team1.png";
+import image2 from "../../image/team2.png";
+import image3 from "../../image/mt.png";
 
 const TabButtonWithText = ({ onClick, active, text }) => (
   <S.TabButtonWithText onClick={onClick} active={active}>
-    <img src={active ? button : buttonoff} alt={text} /> {/* Use the imported image here */}
+    <img src={active ? button : buttonoff} alt={text} />
     {text}
   </S.TabButtonWithText>
 );
 
 const TeamSection = () => {
-  const [activeTab, setActiveTab] = useState("test1"); // Default = "test1"
+  const [activeTab, setActiveTab] = useState("test1");
+  const [slideIndex, setSlideIndex] = useState(0);
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab, index) => {
     setActiveTab(tab);
+    setSlideIndex(index);
+  };
+
+  const getImageSource = (tab) => {
+    switch (tab) {
+      case "test1":
+        return image1;
+      case "test2":
+        return image2;
+      case "test3":
+        return image3;
+      default:
+        return buttonoff;
+    }
   };
 
   return (
     <S.ProjectContainer id="프로젝트">
       <S.Project>저희 팀 멤버들이에요.</S.Project>
       <S.Buttons>
-        <TabButtonWithText
-          onClick={() => handleTabClick("test1")}
-          active={activeTab === "test1"}
-          text="1기"
-        />
-        <TabButtonWithText
-          onClick={() => handleTabClick("test2")}
-          active={activeTab === "test2"}
-          text="2기"
-        />
-        <TabButtonWithText
-          onClick={() => handleTabClick("test3")}
-          active={activeTab === "test3"}
-          text="Mento"
-        />
+        {["test1", "test2", "test3"].map((tab, index) => (
+          <TabButtonWithText
+            key={tab}
+            onClick={() => handleTabClick(tab, index)}
+            active={activeTab === tab}
+            text={`${index + 1}기`}
+          />
+        ))}
       </S.Buttons>
       <S.ImageLayer>
-        <S.Image
-          imageSource={activeTab === "test1" ? button : buttonoff}
-          active={activeTab === "test1"}
-        />
-        <S.Image
-          imageSource={activeTab === "test2" ? button : buttonoff}
-          active={activeTab === "test2"}
-        />
-        <S.Image
-          imageSource={activeTab === "test3" ? button : buttonoff}
-          active={activeTab === "test3"}
-        />
+        <S.Wrapper slideIndex={slideIndex}>
+          {["test1", "test2", "test3"].map((tab, index) => (
+            <S.Slide key={tab}>
+              <S.Photo
+                src={getImageSource(tab)}
+                alt={tab}
+              />
+            </S.Slide>
+          ))}
+        </S.Wrapper>
       </S.ImageLayer>
     </S.ProjectContainer>
   );

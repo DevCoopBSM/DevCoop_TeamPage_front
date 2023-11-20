@@ -1,56 +1,50 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axiosInstance from "../util/axios";
 import { useNavigate, useParams } from "react-router-dom";
 import "../Styles/ReadBoard.css";
 import Modal from "react-modal";
 import checkpopup from "../assets/mini_image.png";
 import Navbar from "../Component/navbar";
-import Board from "./Board";
 
 function ReadBoard() {
+  const { id } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navigate = useNavigate();
   const closeModal = () => setIsModalOpen(false);
 
-  const handleEditClick = () => {
-    navigate("/CreateBoard");
+  const deletePost = async () => {
+    try {
+      await axiosInstance.delete(`http://10.129.57.6:5000/api/delete/${id}`);
+      navigate("/blog");
+    } catch (err) {
+      console.log(err);
+    }
   };
-  const { index } = useParams();
 
-  const [loading, setLoading] = useState(true);
-  const [board, setBoard] = useState({});
-  useEffect(() => {
-    // DELETE 요청
-    axios
-      .delete("http://10.10.0.15:5000/api/showboard/1")
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    // PUT 요청
-    axios
-      .put("http://10.10.0.15:5000/api/showboard/1", {
+  const putPost = async () => {
+    try {
+      await axiosInstance.put(`http://10.129.57.6:5000/api/blog/${id}`, {
         title: "Updated Title",
         content: "Updated Content",
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
       });
-  }, []);
-  const getBoard = async () => {
-    const resp = await (
-      await axios.get(`http://10.10.0.15:5000/api/showboard/{index}`)
-    ).data;
-    setBoard(resp.data);
-    setLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
   };
+
+  const getBoard = async () => {
+    try {
+      const res = await axiosInstance.get(
+        `http://10.129.57.6:5000/api/blog/${id}`,
+      );
+      setBoard(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const [board, setBoard] = useState({});
 
   useEffect(() => {
     getBoard();
@@ -61,8 +55,8 @@ function ReadBoard() {
       <Navbar />
       <div id="mini-title">DevCoop 공지사항</div>
       <div className="board-box">
-        <div className="main-title">테스트용 데브쿠프 공지사항</div>
-        <button onClick={handleEditClick} id="edit">
+        <div className="main-title">{board.title}</div>
+        <button onClick={() => navigate(`/CreateBoard/${id}`)} id="edit">
           수정
         </button>
         <button id="remove" onClick={() => setIsModalOpen(true)}>
@@ -82,19 +76,18 @@ function ReadBoard() {
           <button id="check2" onClick={() => setIsModalOpen(false)}>
             취소
           </button>
-          <button id="check1" onClick={() => setIsModalOpen(false)}>
+          <button
+            id="check1"
+            onClick={() => {
+              deletePost();
+              setIsModalOpen(false);
+            }}
+          >
             삭제
           </button>
           <img src={checkpopup} alt="popup" id="popup" />
         </Modal>
-        <div className="content">
-          <Board
-            idx={board.idx}
-            title={board.title}
-            contents={board.contents}
-            createdBy={board.createdBy}
-          />
-        </div>
+        <div className="content">{board.detail}</div>
       </div>
     </>
   );

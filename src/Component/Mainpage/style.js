@@ -63,6 +63,20 @@ export const Button = styled.button`
   outline: none;
 `;
 
+export const Button2 = styled.button`
+color: #000;
+font-family: Inter;
+font-size: 25px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+margin-right: 80px;
+background: none;
+border: none;
+cursor: pointer;
+outline: none;
+`;
+
 export const LoginButton = styled.button`
   display: flex;
   width: 120px;

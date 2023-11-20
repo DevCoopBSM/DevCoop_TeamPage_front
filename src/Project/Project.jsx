@@ -1,21 +1,24 @@
-import './App.css';
-import project1 from "./P1.png"
-import project2 from "./P2.png"
-import project3 from "./P3.png"
-import ari from "./AriPayL_ver2.svg"
+import '../App.css';
+import project1 from "../P1.png"
+import project2 from "../P2.png"
+import project3 from "../P3.png"
+import ari from "../AriPayL_ver2.svg"
 import { Link } from "react-router-dom";
-
+import React from 'react';
+import NavBar from '../Component/navbar';
+import ari2 from "../image/AriPay2.svg";
+import * as S from "./style";
 
 function Project() {
-  return (
-  <div class="pro1-wrap">
-    <div class="ar2"><img id="ariii" src={ari} alt="ari image"></img></div>
-    <div class="headline-text">
-      <p>
-        <p class="head">실물상품권을 학생증으로</p>
-        <p id="head1">아리페이</p>
-      </p>
-    </div>
+  return ( 
+  <><NavBar /><div class="pro1-wrap">
+      <div class="ar2"><img id="ariii" src={ari} alt="ari image"></img></div>
+      <div class="headline-text">
+        <p>
+          <p class="head">실물상품권을 학생증으로</p>
+          <p id="head1">아리페이</p>
+        </p>
+      </div>
       <div class="pro1-text">
         <p><p class="text1">편리한 잔액 조회</p>
           알이와 편하게 잔액을 조회해 보세요.<br></br>
@@ -35,9 +38,6 @@ function Project() {
       <div class="pro2-image">
         <img id="pro2" src={project2} alt="project2 image"></img>
       </div>
-
-
-
       <div class="pro3-text">
         <p><p class="text3">쉽고 빠른 결제</p>
           학생증 하나만 제시해 주세요.<br></br>
@@ -49,23 +49,15 @@ function Project() {
       </div>
 
 
-      <div class="foot-wrapeer">
-        <div class="ar2"><img id="ariii" src={ari} alt="ari image"></img></div>
-        <div class="headline-text2">
-          <p>
-            <p class="head3">소중한 상품권,
-            <p class="head3">
-              이젠 알이에게 맡겨주세요.
-            </p>
-            </p>
-            <p id="head1">아리페이</p>
-          </p>
-          <button id="probtn">{'>'}프로젝트보러가기</button>
-        </div>
-      </div>
-      
-      
-  </div>
+      <S.AripaySVG>
+        <a href="http://pay.bsm-aripay.kr/" target="_blank">
+          <img src={ari2} alt="AriPay 이미지" />
+          <div className="overlay-button"></div>
+        </a>
+      </S.AripaySVG>
+
+
+    </div></>
   );
 }
 

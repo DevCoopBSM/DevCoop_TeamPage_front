@@ -1,14 +1,11 @@
-* {
-  font: Inter;
-}
+import styled from "styled-components";
+import Modal from "react-modal";
 
-#all-wrap {
-  position: relative; /* 추가 */
+export const Wrapper = styled.div`
   padding: 20px;
-  margin-bottom: 20px;
-}
+`;
 
-#main-title {
+export const Title = styled.div`
   position: absolute;
   width: 569px;
   height: 60px;
@@ -20,23 +17,24 @@
   line-height: 61px;
   letter-spacing: 0em;
   text-align: left;
-}
+`;
 
-#title {
+// Add more styled components here...
+
+export const TitleBox = styled.input`
   position: absolute;
   border: none;
   outline: none;
   width: 900px;
   height: 25px;
-  font-size: 20px;
   top: 240px;
   left: 245px;
   padding: 30px 60px 30px 60px;
   border-radius: 10px;
   box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
-}
+`;
 
-#content {
+export const TextBox = styled.textarea`
   position: absolute;
   border: none;
   outline: none;
@@ -49,39 +47,26 @@
   border-radius: 10px;
   box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
   resize: none;
-  font-family: Inter;
-}
+`;
 
-#explain::placeholder {
-  font-weight: 500;
-  font-size: 20px;
-}
-#result_container {
-  margin-top: 20px; /* 원하는 여백 크기로 조정하세요. */
-}
-
-
-#result {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 750px;
-  margin-left: 570px;
-  margin-bottom: 30px;
+export const Button = styled.button`
   cursor: pointer;
+  position: absolute;
   border: none;
   width: 320px;
   height: 54px;
+  top: 780px;
+  left: 596px;
+  padding: 10px;
   border-radius: 10px;
   color: white;
   font-size: 24px;
   font-weight: 700;
   background: rgba(255, 194, 12, 1);
   box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
-  
-}
+`;
 
-#modal {
+export const CustomModal = styled(Modal)`
   display: flex !important;
   width: 390px;
   height: 157.5px;
@@ -93,15 +78,8 @@
   margin-top: auto !important;
   margin-bottom: auto !important;
   border: none !important;
-}
-
-#popup {
-  position: absolute;
-  top: 80.2px;
-  width: 100%;
-}
-
-#popup_okay {
+`;
+export const PopupText = styled.button`
   position: absolute;
   width: 300px;
   height: 30px;
@@ -112,9 +90,8 @@
   top: 25px;
   left: 45px;
   font-style: bold;
-}
-
-#check {
+`;
+export const CheckButton = styled.button`
   position: absolute;
   text-align: center;
   border: none;
@@ -132,28 +109,12 @@
   border-radius: 8px;
   box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
   z-index: 1201;
-}
+`;
 
-#check:hover {
-  background-color: rgb(214, 167, 26);
-}
+export const PopupImage = styled.button`
+  position: absolute;
+  top: 80.2px;
+  width: 100%;
+`;
 
-#manage_pop {
-  z-index: 1200;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#check-modal {
-  width: 780px;
-}
-
-#check-modal img {
-  padding: 0px;
-  position: relative;
-  width: 100% !important;
-  height: 153.5px;
-  top: 50%;
-  transform: translateY(-5%);
-}
+// Add more styled components here...

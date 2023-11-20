@@ -2,15 +2,15 @@ import styled, { keyframes } from "styled-components";
 
 export const SliderImageWrapper = styled.div`
   display: flex;
-  transition: transform 0.5s ease-in-out; /* Add a smooth transition effect */
-  width: ${(props) => props.children.length * 100}%; /* Adjust the width based on the number of images */
+  transition: transform 0.5s ease-in-out;
+  width: ${(props) => props.children.length * 100}%;
 `;
 
 
 
 export const fontface = styled.span`
   font-family: 'Inter';
-  src: url('Inter.ttf') format('truetype'); /* 폰트 파일 경로와 형식에 따라 수정 */
+  src: url('Inter.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 `;
@@ -20,7 +20,7 @@ export const ImageSliderContainer = styled.div`
   position: relative;
   width: 100%;
   height: 700px;
-  overflow: hidden; /* Add this line */
+  overflow: hidden;
   margin-top: 80px; // navbar 크기에 맞추어 수정
 `;
 
@@ -55,5 +55,5 @@ export const DevCoopText = styled(fontface)`
   font-weight: 1000;
   line-height: normal;
   z-index: 2;
-  animation: ${slideAndFade} 0.8s ease-in-out; /* 1초 동안 위에서 아래로 내려오면서 페이드 인 */
+  animation: ${slideAndFade} 0.8s ease-in-out;
 `;

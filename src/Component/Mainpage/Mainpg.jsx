@@ -4,7 +4,6 @@ import Home from "../imgslider/imgslider"
 import Team from "../Team/Teampg"
 import Project from "../Project/pj"
 import Member from "../Member/mb"
-import Announcement from "../Announcement/an"
 
 const Mainpg = () => {
   return (
@@ -15,7 +14,6 @@ const Mainpg = () => {
       <Team />
       <Project />
       <Member />
-      <Announcement />
     </div>
     </body>
   );

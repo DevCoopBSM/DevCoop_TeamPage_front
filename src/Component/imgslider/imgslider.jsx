@@ -3,7 +3,7 @@ import * as S from "./style";
 import image1 from "../../image/testlogo.png";
 import image2 from "../../image/Logo.png";
 
-const images = [image1, image2]; // 이미지 파일 경로 추가
+const images = [image1, image2];
 
 const ImageSlider = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -11,9 +11,9 @@ const ImageSlider = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTransition(true); // 화면 전환 트랜지션 활성화
+      setTransition(true);
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // 이미지 변경 주기 (5초마다)
+    }, 5000); // 이미지 변경 주기 (5초)
 
     return () => {
       clearInterval(interval);
@@ -21,7 +21,7 @@ const ImageSlider = () => {
   }, []);
 
   const handleTransitionEnd = () => {
-    setTransition(false); // 화면 전환 트랜지션 비활성화
+    setTransition(false);
   };
 
   return (

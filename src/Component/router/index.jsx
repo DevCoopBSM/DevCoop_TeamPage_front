@@ -9,6 +9,7 @@ import Blog from "../../pages/Blog/Blog";
 import ReadBoard from "../../pages/ReadBoard";
 import CreateBoard from "../../pages/CreateBoard";
 import Paging from "../../pages/Paging";
+import  Project  from "../../Project/Project";
 // import Modal from "./pages/modal";
 
 const Routers = () => {
@@ -17,11 +18,13 @@ const Routers = () => {
       <Route path="/" element={<Main />} />
       <Route path="/*" element={<NotFound />} />
       <Route path="/Blog" element={<Blog />} />
-      <Route path="/ReadBoard" element={<ReadBoard />} />
       <Route path="/CreateBoard" element={<CreateBoard />} />
+      <Route path="/CreateBoard/:id" element={<CreateBoard />} />
       <Route path="/Paging" element={<Paging />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/Sign" element={<Sign />} />
+      <Route path="/Project" element={<Project />} />
+      <Route path="/ReadBoard/:id" element={<ReadBoard />} />
     </Routes>
   );
 };
