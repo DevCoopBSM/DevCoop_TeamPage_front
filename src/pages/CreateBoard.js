@@ -45,7 +45,6 @@ function CreateBoard() {
     } catch (err) {
       console.log(err);
     }
-
   };
 
   useEffect(() => {
@@ -79,10 +78,11 @@ function CreateBoard() {
         />
       </div>
 
-      {/* 모달 창이 열리게 변경 */}
-      <button type="button" id="result" onClick={() => setIsModalOpen(true)}>
-        등록하기
-      </button>
+      <div id="result_container">
+        <button type="button" id="result" onClick={() => setIsModalOpen(true)}>
+          등록하기
+        </button>
+      </div>
 
       {/* 확인했어요 버튼 클릭 시 sendDataToDB 함수 호출 */}
 
