@@ -5,8 +5,8 @@ export const AripaySVG = styled.div`
   top: 0;
   transform: translateX(-50%);
   transform: scale(0.8);
-  width: 1400px;
-  height: auto;
+  width: 2750px;
+  height: 680px;
   preserveAspectRatio: none;
   overflow: hidden;
   .overlay-button {
