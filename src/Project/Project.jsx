@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import React from 'react';
 import NavBar from '../Component/navbar';
 import ari2 from "../image/AriPay2.svg";
-
+import * as S from "./style";
 
 function Project() {
   return ( 
@@ -49,14 +49,12 @@ function Project() {
       </div>
 
 
-      <div class="foot-wrapeer">
-        <div class="headline-text2">
-          <a href="http://pay.bsm-aripay.kr/" target="_blank">
+      <S.AripaySVG>
+        <a href="http://pay.bsm-aripay.kr/" target="_blank">
           <img src={ari2} alt="AriPay 이미지" />
           <div className="overlay-button"></div>
         </a>
-        </div>
-      </div>
+      </S.AripaySVG>
 
 
     </div></>
