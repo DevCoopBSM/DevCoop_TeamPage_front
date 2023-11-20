@@ -48,7 +48,7 @@ function Project() {
 
 
       <div class="foot-wrapeer">
-        <div class="ar2"><img id="ariii2" src={ari} alt="ari image"></img></div>
+        <div class="ar3"><img id="ariii2" src={ari} alt="ari image"></img></div>
         <div class="headline-text2">
           <p>
             <p class="head3">소중한 상품권,
