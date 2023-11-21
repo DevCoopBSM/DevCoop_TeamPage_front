@@ -8,7 +8,9 @@ export const ProjectContainer = styled.div`
 
 export const Buttons = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 20%; 
+  margin-top: 20px;
   margin-bottom: 20px;
 `;
 
@@ -20,13 +22,8 @@ export const TabButtonWithText = styled.button`
   margin: 0 10px;
   padding: 0;
   display: inline-block;
-  width: 50px;
-  height: 50px;
-  background-image: url(${(props) => props.imageSource});
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: brightness(${(props) => (props.active ? 1 : 0.7)});
-  transition: filter 0.3s;
+  position: relative;
+  overflow: hidden;
   color: #000;
   font-family: Inter;
   font-size: 20px;
@@ -34,32 +31,31 @@ export const TabButtonWithText = styled.button`
   font-weight: 700;
   line-height: normal;
 
-  &:hover {
-    filter: brightness(1);
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s; // 페이드 효과
+  }
+
+  &:hover:before {
+    background-color: rgba(255, 255, 255, 0.5);
   }
 `;
+
+
 
 export const ImageLayer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 100%;
-  height: 100px; /* 이미지의 높이에 맞게 조절 */
+  width: 1000px;
+  height: 200px;
   overflow: hidden;
-`;
-
-export const Image = styled.div`
-  background-image: url(${(props) => props.imageSource});
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: ${(props) => (props.active ? 1 : 0)};
-  transition: opacity 0.3s;
 `;
 
 export const PJS = styled.div`
@@ -69,7 +65,7 @@ export const PJS = styled.div`
   font-style: normal;
   font-weight: 700;
   line-height: 30px;
-  margin-right: 360px; // 텍스트 간격
+  margin-right: 360px;
   text-align: left;
 `;
 
@@ -93,56 +89,19 @@ export const Wrapper = styled.div`
   display: flex;
   transition: all 0.3s ease-in-out;
   transform: translateX(${({ slideIndex }) => slideIndex * -100 + "%"});
+  text-align: center;
 `;
 
 export const Slide = styled.div`
   width: 100%;
   height: 100%;
   flex-shrink: 0;
+  display: inline-block; 
 `;
 
 export const Photo = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-export const Arrow = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-  left: ${({ direction }) => direction === "prev" && "0px"};
-  right: ${({ direction }) => direction === "next" && "0px"};
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: pink;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 1;
-`;
-
-export const DotContainer = styled.div`
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 100px;
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const Dot = styled.div`
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: pink;
-  cursor: pointer;
-  &.active {
-    background-color: skyblue;
-  }
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; // 이미지 자르기
+  display: inline-block; 
 `;
