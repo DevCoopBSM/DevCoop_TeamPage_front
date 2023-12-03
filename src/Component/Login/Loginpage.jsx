@@ -27,7 +27,6 @@ function Login() {
         pw: userPassword,
         name: userName,
       }); // 'login' 함수 호출
-
       if (response.status === 200) {
         console.log(response.data); // 서버에서 받아온 JSON Object 출력
         console.log(response.data.acc_token); // 서버에서 받아온 accessToken 출력
@@ -67,10 +66,10 @@ function Login() {
           <br />
           <S.LoginButton type="submit" id="login" value="로그인" />
         </form>
-        <text>
+        <p>
           만약 계정이 없다면?
           <S.StyledLink to="/Sign">회원가입하기</S.StyledLink>
-        </text>
+        </p>
       </S.LoginWrapper>
     </S.Body>
   );
