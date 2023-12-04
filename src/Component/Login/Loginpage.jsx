@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 import chick from '../../assets/DevCoopL.svg';
 import Navbar from '../navbar';
-import { axiosInstance } from '../../axios';
+import { axiosInstance } from '../../util/axios';
 
 function Login() {
   const [userName, setUserName] = useState('');
