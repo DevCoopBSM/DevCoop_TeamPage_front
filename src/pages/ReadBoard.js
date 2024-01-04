@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "../Styles/ReadBoard.css";
 import Modal from "react-modal";
 import checkpopup from "../assets/mini_image.png";
-import Navbar from "../Component/navbar";
+import Navbar from "../components/navbar";
 
 function ReadBoard() {
   const { id } = useParams();
@@ -36,7 +36,7 @@ function ReadBoard() {
   const getBoard = async () => {
     try {
       const res = await axiosInstance.get(
-        `http://10.129.57.6:5000/api/blog/${id}`,
+        `http://10.129.57.6:5000/api/blog/${id}`
       );
       setBoard(res.data);
     } catch (err) {

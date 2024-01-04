@@ -1,11 +1,10 @@
-import React from 'react'
-import Loginpg from '../../Component/Login/Loginpage'
+import React from "react";
+import Loginpg from "../../components/Login/Loginpage";
 
 export default function Mainpage() {
-  
   return (
     <>
-    <Loginpg/>
+      <Loginpg />
     </>
-  )
+  );
 }
