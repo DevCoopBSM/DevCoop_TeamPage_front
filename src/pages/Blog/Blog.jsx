@@ -1,5 +1,5 @@
 import React from "react";
-import Blogpg from "../../Component/Blog/Blogpage";
+import Blogpg from "../../components/Blog/Blogpage";
 
 export default function Mainpage() {
   return (

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Styles/CreateBoard.css";
 import Modal from "react-modal";
 import checkpopup from "../assets/mini_image.png";
-import Navbar from "../Component/navbar";
+import Navbar from "../components/navbar";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { axiosInstance } from "../util/axios";
@@ -19,7 +19,7 @@ function CreateBoard() {
   const getBoard = async () => {
     try {
       const res = await axiosInstance.get(
-        `http://10.129.57.6:5000/api/blog/${id}`,
+        `http://10.129.57.6:5000/api/blog/${id}`
       );
       setTitle(res.data.title);
       setDetail(res.data.detail);
